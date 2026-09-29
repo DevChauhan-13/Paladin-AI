@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paladin AI — Incident History &amp; Audit Log</title>
+  <meta name="description" content="Searchable archive and compliance audit log of historical threat detections and analyst triage decisions.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Paladin AI — Incident History">
+  <meta property="og:description" content="Filter, search, and audit past network threat events and analyst classifications.">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="src/css/main.css">
+  <link rel="icon" type="image/png" href="src/assets/images/logo.png">
+</head>
+<body>
+
+
+  <!-- Site Header -->
+  <header class="site-header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <!-- Logo -->
+        <a href="index.html" class="brand-logo" aria-label="Paladin AI Landing Page">
+          <img src="src/assets/images/logo.png" alt="Paladin AI logo" class="brand-icon">
+          <span>Paladin AI</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
+          <div class="nav-item">
+            <a href="dashboard.html" class="nav-link">Live Triage</a>
+          </div>
+          <div class="nav-item">
+            <a href="investigation.html" class="nav-link">Investigation</a>
+          </div>
+          <div class="nav-item active">
+            <a href="history.html" class="nav-link">Alert History</a>
+          </div>
+          <div class="nav-item">
+            <a href="health.html" class="nav-link">System Health</a>
+          </div>
+          <div class="nav-item">
+            <a href="integrations.html" class="nav-link">Integrations</a>
+          </div>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme">
+            <span class="theme-toggle-indicator"></span>
+            <span class="theme-toggle-text">WHITE</span>
+          </button>
+          <a href="dashboard.html" class="btn-header-shop">Live Triage</a>
+          <a href="#" class="btn-header-quote">
+            <span class="soc-conn-dot" style="margin-right: 6px;"></span>
+            <span>STORAGE OK</span>
+          </a>
+          <button class="mobile-toggle" aria-label="Toggle navigation menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Report Container (Supports White & Dark theme seamlessly) -->
+  <main style="padding-top: 100px;">
+    <div class="soc-report-container">
+      
+      <!-- History Topbar / Header Banner -->
+      <div class="soc-history-header">
+        <div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+            <span class="tech-badge" style="color: var(--color-7);">COMPLIANCE &amp; AUDIT</span>
+            <span style="font-family: var(--font-mono); font-size: 11px; color: var(--soc-text-dim);">NTRO PERSISTENT STORAGE</span>
+          </div>
+          <h1 class="text-xl" style="margin-bottom: 6px; text-transform: uppercase;">INCIDENT HISTORY &amp; AUDIT LOG</h1>
+          <p class="text-base text-subtle" style="max-width: 680px;">
+            Historical record of all streaming threat alerts emitted by detectors, stored across Kafka and ClickHouse cold storage.
+          </p>
+        </div>
+
+        <div class="soc-export-group">
+          <button class="soc-btn-export" id="exportCsvBtn">
+            <span>📥</span> Export CSV
+          </button>
+          <button class="soc-btn-export" id="exportJsonBtn">
+            <span>{ }</span> Export JSON
+          </button>
+        </div>
+      </div>
+
+      <!-- Filter Controls Strip -->
+      <div class="soc-filter-bar">
+        <div class="soc-search-wrap">
+          <span class="soc-search-icon">🔍</span>
+          <input type="text" id="histSearchInput" class="form-input soc-search-input" placeholder="Search by source IP, destination IP, flow ID or summary...">
+        </div>
+
+        <select id="histClassSelect" class="form-select soc-filter-select" aria-label="Filter Threat Class">
+          <option value="all">All Threat Classes</option>
+          <option value="Volumetric/Protocol DDoS">Volumetric DDoS</option>
+          <option value="Botnet C2 Beaconing">Botnet C2 Beaconing</option>
+          <option value="DGA Domains / DNS Tunneling">DGA / DNS Tunnel</option>
+          <option value="Malware in Encrypted Sessions (TLS/QUIC)">Encrypted Malware (TLS/QUIC)</option>
+          <option value="Reconnaissance/Port Scanning">Port Scanning / Recon</option>
+          <option value="Data Exfiltration">Data Exfiltration</option>
+        </select>
+
+        <select id="histSevSelect" class="form-select soc-filter-select" aria-label="Filter Severity">
+          <option value="all">All Severities</option>
+          <option value="critical">Critical</option>
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
+
+        <select id="histLabelSelect" class="form-select soc-filter-select" aria-label="Filter Analyst Label">
+          <option value="all">All Analyst States</option>
+          <option value="confirmed">Confirmed Threats</option>
+          <option value="false_positive">False Positives</option>
+          <option value="unlabeled">Unlabeled</option>
+        </select>
+
+        <select id="histDateSelect" class="form-select soc-filter-select" aria-label="Filter Date Range">
+          <option value="all">All Time History</option>
+          <option value="24h">Last 24 Hours</option>
+          <option value="7d">Last 7 Days</option>
+          <option value="30d">Last 30 Days</option>
+        </select>
+      </div>
+
+      <!-- History Table (PRD 2.4) -->
+      <div class="soc-table-wrap">
+        <table class="soc-table">
+          <thead>
+            <tr>
+              <th data-sort="timestamp" class="is-sorted">Timestamp ↕</th>
+              <th data-sort="threat_class">Threat Class ↕</th>
+              <th data-sort="severity">Severity ↕</th>
+              <th>Source → Destination</th>
+              <th data-sort="confidence">Confidence ↕</th>
+              <th>Analyst Label</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="historyTableBody">
+            <!-- Dynamically populated by soc-history.js -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pagination -->
+      <div class="soc-pagination">
+        <div class="soc-page-info" id="pageInfo">Showing records...</div>
+        <div class="soc-page-nav" id="paginationNav">
+          <!-- Page buttons -->
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Site Footer (Standard BotBlox System Footer) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 PALADIN AI // NTRO CYBER THREAT MONITORING SYSTEM. ALL RIGHTS RESERVED.</div>
+        <div class="footer-legal-links">
+          <span style="color: var(--border-color-4);">Unidirectional Streaming Architecture</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="src/js/main.js"></script>
+  <script src="src/js/soc-history.js"></script>
+</body>
+</html>

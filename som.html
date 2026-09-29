@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System on Modules (SOMs) | Rugged Edge Compute — BotBlox</title>
+  <meta name="description" content="Discover BotBlox Rugged System-on-Modules (SOMs) designed to stack directly onto Ethernet switches. Compact, extreme temperature compute for UAVs, space, robotics, and defense.">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="System on Modules (SOMs) | Rugged Edge Compute — BotBlox">
+  <meta property="og:image" content="src/assets/images/og-banner.png">
+  
+  <link rel="stylesheet" href="src/css/main.css">
+  <link rel="icon" type="image/png" href="src/assets/images/logo.png">
+</head>
+<body>
+
+  <!-- Site Header (Always Black Across All Themes) -->
+  <header class="site-header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="brand-logo" aria-label="BotBlox Systems Home">
+          <img src="src/assets/images/logo.png" alt="BotBlox logo" class="brand-icon">
+          <span>BotBlox Systems</span>
+        </a>
+
+        <nav class="main-nav" id="mainNav">
+          <div class="nav-item">
+            <a href="products.html#networking" class="nav-link has-dropdown">Edge Networking</a>
+            <div class="dropdown-menu">
+              <a href="products.html#networking" class="dropdown-link"><span>Overview</span><span>→</span></a>
+              <a href="products.html#boards" class="dropdown-link"><span>Boards</span><span>›</span></a>
+              <a href="products.html#cores" class="dropdown-link"><span>Cores &amp; Modules</span><span>›</span></a>
+              <a href="products.html#pucks" class="dropdown-link"><span>Pucks</span><span>›</span></a>
+              <a href="products.html#software" class="dropdown-link"><span>Software</span><span>›</span></a>
+            </div>
+          </div>
+          <div class="nav-item active">
+            <a href="som.html" class="nav-link has-dropdown">Edge Compute</a>
+            <div class="dropdown-menu">
+              <a href="products.html#compute" class="dropdown-link"><span>Overview</span><span>→</span></a>
+              <a href="som.html" class="dropdown-link"><span>SOMs</span><span>›</span></a>
+              <a href="products.html#compute-boards" class="dropdown-link"><span>Boards</span><span>›</span></a>
+              <a href="products.html#software" class="dropdown-link"><span>Software</span><span>›</span></a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="products.html#radar" class="nav-link">Radar</a>
+          </div>
+          <div class="nav-item">
+            <a href="applications.html" class="nav-link">Application</a>
+          </div>
+          <div class="nav-item">
+            <a href="about.html" class="nav-link">Company</a>
+          </div>
+          <div class="nav-item">
+            <a href="resources.html" class="nav-link">Resources</a>
+          </div>
+        </nav>
+
+        <div class="header-actions">
+          <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme">
+            <span class="theme-toggle-indicator"></span>
+            <span class="theme-toggle-text">WHITE</span>
+          </button>
+          <a href="products.html" class="btn-header-shop">Shop</a>
+          <a href="contact.html#quote" class="btn-header-quote">Request a Quote</a>
+          <button class="mobile-toggle" aria-label="Toggle navigation menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: 100px;">
+
+    <!-- ============================================================
+         1. WHAT IS A SOM? HERO SECTION (Exact replica from video)
+         ============================================================ -->
+    <section class="section" style="padding-top: var(--space-8); padding-bottom: var(--space-8);">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-4);">
+          <div>
+            <h1 class="text-xl" style="margin-bottom: var(--space-2); text-transform: uppercase;">WHAT IS A SOM?</h1>
+            <p class="text-base text-subtle" style="max-width: 600px; font-weight: 500;">
+              A SOM is a pre-engineered compute brain you mount onto your own carrier board.
+            </p>
+          </div>
+          <a href="#som-catalog" class="btn-som-outline">↳ SHOP SOMS</a>
+        </div>
+
+        <!-- Board Card with Dual Monospace Technical Overviews -->
+        <div class="som-hero-card">
+          <div style="display: flex; justify-content: flex-start; margin-bottom: var(--space-2);">
+            <span class="tech-badge" style="color: var(--color-7);">RUGGED SOM</span>
+          </div>
+
+          <div class="som-hero-image-wrap">
+            <img src="src/assets/images/som/som_board_hotspots.png" alt="BotBlox Rugged SOM Circuit Board with Annotated Subsystems">
+          </div>
+
+          <div class="som-hero-desc-grid">
+            <div class="som-hero-desc-col">
+              A SYSTEM-ON-MODULE IS A TINY CIRCUIT BOARD THAT EMBEDS THE PROCESSOR, THE RAM, THE STORAGE, THE POWER MANAGEMENT, THE CLOCK GENERATION, AND A CURATED SET OF HIGH-SPEED PERIPHERALS ALL ROUTED, VALIDATED, AND CHARACTERISED ON A FOOTPRINT TYPICALLY SMALLER THAN A CREDIT CARD.
+            </div>
+            <div class="som-hero-desc-col">
+              SOC DESIGN IS HARD. DDR MEMORY ROUTING REQUIRES IMPEDANCE-MATCHED, LENGTH-TUNED TRACES. MULTI-RAIL POWER SEQUENCING DEMANDS PRECISELY-TIMED REGULATOR RAMPS. EMI MITIGATION AROUND FAST CLOCKS NEEDS CAREFUL GROUND PLANES AND DECOUPLING. GET ANY OF THESE WRONG AND THE SYSTEM EITHER DOESN'T BOOT, FAILS CERTIFICATION, OR CRASHES IN THE FIELD AT 60°C. A SOM SHIPS WITH ALL OF THIS ALREADY SOLVED.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2. COMPARISON MATRIX TABLE (Exact replica from video)
+         ============================================================ -->
+    <section class="section" style="padding-top: var(--space-4); padding-bottom: var(--space-8);">
+      <div class="container">
+        <div class="som-comparison-wrap">
+          <table class="som-matrix-table">
+            <thead>
+              <tr>
+                <th class="col-dark" style="width: 22%;">COMPARATIVE</th>
+                <th class="col-dark" style="width: 20%;">SoC Chip-Down</th>
+                <th class="col-dark" style="width: 20%;">SBC (Raspberry Pi, Jetson dev kit)</th>
+                <th class="col-dark" style="width: 20%;">Industrial Box / Appliance</th>
+                <th class="col-highlight" style="width: 18%;">SOMs</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="row-label">TIME TO FIRST PROTOTYPE</td>
+                <td>12–18 months</td>
+                <td>1 day</td>
+                <td>1 day</td>
+                <td class="col-highlight-cell">2–4 weeks</td>
+              </tr>
+              <tr>
+                <td class="row-label">ENGINEERING EFFORT</td>
+                <td>Very High (board layout, DDR routing, power sequencing)</td>
+                <td>Low (plug-and-play)</td>
+                <td>None (cable and configure)</td>
+                <td class="col-highlight-cell">Moderate (carrier board design only)</td>
+              </tr>
+              <tr>
+                <td class="row-label">FORM FACTOR FLEXIBILITY</td>
+                <td>Unlimited (arbitrary PCB geometry)</td>
+                <td>Fixed by vendor (often large, odd connectors)</td>
+                <td>Rigid chassis (heavy, bulky)</td>
+                <td class="col-highlight-cell">High (custom carrier wraps around module)</td>
+              </tr>
+              <tr>
+                <td class="row-label">CUSTOM I/O &amp; CONNECTORS</td>
+                <td>Fully custom</td>
+                <td>Limited to onboard headers</td>
+                <td>Fixed panel connectors</td>
+                <td class="col-highlight-cell">Anything you want (routed via carrier)</td>
+              </tr>
+              <tr>
+                <td class="row-label">UPGRADE PATH</td>
+                <td>Redesign whole board</td>
+                <td>Replace board (breaks mechanicals)</td>
+                <td>Replace box</td>
+                <td class="col-highlight-cell">Drop-in pin-compatible module upgrade</td>
+              </tr>
+              <tr>
+                <td class="row-label">REQUIRED HW EXPERTISE</td>
+                <td>Senior Hardware Expertise</td>
+                <td>Minimal</td>
+                <td>Minimal</td>
+                <td class="col-highlight-cell">Junior Hardware Expertise</td>
+              </tr>
+              <tr>
+                <td class="row-label">VOLUME COST EFFICIENCY</td>
+                <td>Best at &gt;10k units</td>
+                <td>Poor (full retail markup)</td>
+                <td>Worst (premium pricing)</td>
+                <td class="col-highlight-cell">Strong from 100+ units</td>
+              </tr>
+              <tr>
+                <td class="row-label">BEST FOR</td>
+                <td>High-volume consumer products</td>
+                <td>Hobbyist · prototyping</td>
+                <td>Quick deployment, low-mix</td>
+                <td class="col-highlight-cell">Custom rugged systems</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. THE BOTBLOX SOM ADVANTAGE SECTION (Exact replica from video)
+         ============================================================ -->
+    <section class="section">
+      <div class="container">
+        <span class="tech-eyebrow">THE BOTBLOX SOM ADVANTAGE</span>
+        <h2 class="text-xl" style="margin-bottom: var(--space-3); max-width: 800px;">
+          A SOM for compute that stacks directly into our network hardware.
+        </h2>
+        <p class="text-base text-subtle" style="max-width: 760px; line-height: 1.6; margin-bottom: var(--space-6);">
+          Our SOMs stack directly with BotBlox Ethernet switch hardware to add compute capability directly into the network. Instead of connecting a separate processor to a switch port, the SOM integrates with the switch itself, giving it direct access to Ethernet traffic while reducing system size, weight, and cabling.
+        </p>
+
+        <div class="som-adv-grid">
+          <!-- Card 1: Integration -->
+          <div class="som-adv-card">
+            <div class="som-adv-image-wrap">
+              <img src="src/assets/images/som/feat_integration.png" alt="Stackable SOM Integration with BotBlox Ethernet Hardware">
+            </div>
+            <div class="som-adv-content">
+              <span class="som-adv-tag">INTEGRATION</span>
+              <h3 class="som-adv-title">Stacks directly onto our ethernet switch hardware</h3>
+              <p class="som-adv-desc">
+                Rugged SOM and SAM9 Compute Module stack directly onto SwitchBlox Rugged and RouterCore (respectively), providing direct access to network traffic without occupying any Ethernet switch ports.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2: Environment -->
+          <div class="som-adv-card">
+            <div class="som-adv-image-wrap">
+              <img src="src/assets/images/som/feat_environment.png" alt="Rugged Environment Survival Testing -40C to +85C">
+            </div>
+            <div class="som-adv-content">
+              <span class="som-adv-tag">ENVIRONMENT</span>
+              <h3 class="som-adv-title">Survives where other SOMs fail</h3>
+              <p class="som-adv-desc">
+                -40°C to +85°C operating, 30,000 ft altitude rated, 5-60 V input with reverse and overvoltage protection. Built for UAVs, ground robots, and field-deployed sensors. Rated just like our Ethernet hardware.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3: Form Factor -->
+          <div class="som-adv-card">
+            <div class="som-adv-image-wrap">
+              <img src="src/assets/images/som/feat_tiny.png" alt="Ultra Small 44.5mm x 44.5mm Form Factor">
+            </div>
+            <div class="som-adv-content">
+              <span class="som-adv-tag">TINY FORM FACTORS</span>
+              <h3 class="som-adv-title">44.5mm x 44.5mm or smaller</h3>
+              <p class="som-adv-desc">
+                Just like our ethernet hardware, our SOMs are designed to be as small as possible, optimized to fit in size and weight limited platforms.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. SPECIFICATIONS CALLOUT SECTION (Exact replica from video)
+         ============================================================ -->
+    <section class="section">
+      <div class="container">
+        <span class="tech-eyebrow">SPECIFICATIONS</span>
+        <h2 class="text-xl" style="margin-bottom: var(--space-6);">Engineered for Extreme Edge Compute</h2>
+
+        <div class="som-specs-container">
+          <div class="som-interactive-board">
+            <img src="src/assets/images/som/som_board_clean.png" alt="Rugged SOM Architecture and Pinout">
+          </div>
+
+          <table class="som-specs-table">
+            <tbody>
+              <tr>
+                <td>Input Voltage</td>
+                <td>5-60V (with protection)</td>
+              </tr>
+              <tr>
+                <td>CPU Core</td>
+                <td>Arm Cortex A7</td>
+              </tr>
+              <tr>
+                <td>Max Clock Frequency</td>
+                <td>792MHz</td>
+              </tr>
+              <tr>
+                <td>RAM</td>
+                <td>4Gbit (512MB DDR3)</td>
+              </tr>
+              <tr>
+                <td>Storage</td>
+                <td>8GB eMMC</td>
+              </tr>
+              <tr>
+                <td>Ethernet Ports</td>
+                <td>1x RGMII / Gigabit MAC</td>
+              </tr>
+              <tr>
+                <td>USB Ports</td>
+                <td>1x USB 2.0</td>
+              </tr>
+              <tr>
+                <td>Other Ports</td>
+                <td>1 x UART, 1 x RS485/422, I2C, SPI</td>
+              </tr>
+              <tr>
+                <td>OS</td>
+                <td>Linux, OpenWRT</td>
+              </tr>
+              <tr>
+                <td>Connectors</td>
+                <td>Molex PicoBlade &amp; High-Density B2B</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. OPENWRT SOFTWARE SECTION (Exact replica from video)
+         ============================================================ -->
+    <section class="section">
+      <div class="container">
+        <div class="som-openwrt-box">
+          <div>
+            <span class="tech-eyebrow">SOFTWARE</span>
+            <h2 class="text-lg" style="margin-bottom: var(--space-3);">Carrier-Grade OpenWRT Network Stack</h2>
+            <p class="text-sm text-subtle" style="line-height: 1.6; margin-bottom: var(--space-4);">
+              BotBlox SOMs ship with OpenWRT pre-installed, the same battle-tested Linux network stack running on millions of routers worldwide. Anywhere a network needs to be managed, secured, and segmented, under conditions that would shut down a commercial router.
+            </p>
+            <p class="text-sm text-subtle" style="line-height: 1.6; margin-bottom: var(--space-6);">
+              From autonomous platforms to perimeter sensor networks, the Rugged SOM brings carrier-grade switching to embedded systems.
+            </p>
+            <a href="contact.html?product=OpenWRT#quote" class="btn-som-outline">↳ DISCOVER OPENWRT</a>
+          </div>
+
+          <div class="som-openwrt-stats">
+            <div style="font-weight: 700; margin-bottom: 8px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;">
+              OpenWRT Live Telemetry Demo
+            </div>
+            <div style="display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid rgba(0,0,0,0.08);">
+              <span>Processed (Tx) Avg:</span>
+              <strong style="color: #2ecc71;">4.5 kpps (ca. 5.5k Total)</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid rgba(0,0,0,0.08);">
+              <span>Processed (Rx) Avg:</span>
+              <strong style="color: #2ecc71;">4.9 kpps (ca. 6.0k Total)</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid rgba(0,0,0,0.08);">
+              <span>Errors (Tx):</span>
+              <strong>0.0 (0 Total)</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding: 4px 0;">
+              <span>Errors (Rx):</span>
+              <strong>0.0 (0 Total)</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. DARK CONTRAST DEPLOYMENTS SECTION (Deep Black Section)
+         As shown in video frame 08-12, this section stays deep black!
+         ============================================================ -->
+    <section class="section section-dark-contrast">
+      <div class="container">
+        <span class="tech-eyebrow" style="color: #d50f3b !important;">DEPLOYMENTS</span>
+        <h2 class="text-xl" style="margin-bottom: var(--space-2); color: #ffffff;">Battle-Tested in the Harshest Environments</h2>
+        <p class="text-base text-subtle" style="max-width: 720px; color: #94a3b8;">
+          Engineered for mission-critical autonomy where failure is not an option.
+        </p>
+
+        <div class="deploy-grid">
+          <!-- 1: Aerial -->
+          <div class="deploy-card">
+            <span class="deploy-card-tag">AERIAL</span>
+            <div class="deploy-card-image-wrap">
+              <img src="src/assets/images/som/deploy_uav.png" alt="UAVs and Aerospace Platform Deployments">
+            </div>
+            <h3 class="deploy-card-title">UAVs &amp; Aerospace</h3>
+            <p class="deploy-card-desc">
+              Network-managed flight systems where weight, voltage range, and EMI tolerance decide whether the platform stays airborne.
+            </p>
+          </div>
+
+          <!-- 2: Space -->
+          <div class="deploy-card">
+            <span class="deploy-card-tag">SPACE</span>
+            <div class="deploy-card-image-wrap">
+              <img src="src/assets/images/som/deploy_space.png" alt="Space Systems and CubeSat Buses">
+            </div>
+            <h3 class="deploy-card-title">Space Systems</h3>
+            <p class="deploy-card-desc">
+              Compact Ethernet switching for spacecraft buses where every gram, every milliwatt, and every qualified component matters.
+            </p>
+          </div>
+
+          <!-- 3: Subsea -->
+          <div class="deploy-card">
+            <span class="deploy-card-tag">SUBSEA</span>
+            <div class="deploy-card-image-wrap">
+              <img src="src/assets/images/som/deploy_subsea.png" alt="Underwater ROV and AUV Subsea Vehicles">
+            </div>
+            <h3 class="deploy-card-title">Underwater Vehicles</h3>
+            <p class="deploy-card-desc">
+              Sealed-environment networking for AUVs and ROVs operating under crushing pressure, saltwater corrosion, and signal blackouts.
+            </p>
+          </div>
+
+          <!-- 4: Ground -->
+          <div class="deploy-card">
+            <span class="deploy-card-tag">GROUND</span>
+            <div class="deploy-card-image-wrap">
+              <img src="src/assets/images/som/deploy_ground.png" alt="Ground Robotics and Defense UGV Systems">
+            </div>
+            <h3 class="deploy-card-title">Ground Robotics</h3>
+            <p class="deploy-card-desc">
+              Rugged switching for UGVs facing shock, vibration, dust, and unstable power across defense, mining, and inspection deployments.
+            </p>
+          </div>
+
+          <!-- 5: Industrial -->
+          <div class="deploy-card">
+            <span class="deploy-card-tag">INDUSTRIAL</span>
+            <div class="deploy-card-image-wrap">
+              <img src="src/assets/images/som/deploy_robot.png" alt="Industrial Factory Automation and Robotic Arms">
+            </div>
+            <h3 class="deploy-card-title">Factory Automation</h3>
+            <p class="deploy-card-desc">
+              Deterministic Ethernet for robot arms and assembly cells where latency, jitter, and EMI immunity decide production uptime.
+            </p>
+          </div>
+
+          <!-- 6: Motorsport -->
+          <div class="deploy-card">
+            <span class="deploy-card-tag">MOTORSPORT</span>
+            <div class="deploy-card-image-wrap">
+              <img src="src/assets/images/som/deploy_race.png" alt="Race Telemetry and High Vibration Vehicles">
+            </div>
+            <h3 class="deploy-card-title">Race Telemetry</h3>
+            <p class="deploy-card-desc">
+              High-bandwidth telemetry switching aboard race cars, surviving heat, vibration, and electromagnetic interference at racing speed.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         7. SOM CATALOG / SHOP SECTION
+         ============================================================ -->
+    <section class="section" id="som-catalog">
+      <div class="container">
+        <span class="tech-eyebrow">SOM HARDWARE CATALOG</span>
+        <h2 class="text-xl" style="margin-bottom: var(--space-8);">Available System-on-Modules &amp; Switch Carriers</h2>
+
+        <div class="grid-3">
+          <!-- Product: Rugged SOM -->
+          <div class="product-card" data-category="compute">
+            <div class="product-image-wrap">
+              <img src="src/assets/images/som/som_board_clean.png" alt="BotBlox Rugged SOM">
+            </div>
+            <div class="product-card-body">
+              <span class="product-category">Edge Compute</span>
+              <h3 class="product-title">Rugged SOM (BB-RSOM-A-1)</h3>
+              <p class="product-desc">
+                High-reliability ARM Cortex-A7 System-on-Module designed to stack directly onto BotBlox Ethernet switch hardware.
+              </p>
+              <div class="product-specs-list">
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Processor</span>
+                  <span class="product-spec-value">Arm Cortex A7 792MHz</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">RAM / Flash</span>
+                  <span class="product-spec-value">512MB DDR3 / 8GB eMMC</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Operating Temp</span>
+                  <span class="product-spec-value">-40°C to +85°C</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Stacking</span>
+                  <span class="product-spec-value">Direct SwitchBlox Mate</span>
+                </div>
+              </div>
+              <a href="contact.html?product=RuggedSOM#quote" class="btn btn-primary" style="width: 100%;">Request Quote</a>
+            </div>
+          </div>
+
+          <!-- Product: SAM9 Compute Module -->
+          <div class="product-card" data-category="compute">
+            <div class="product-image-wrap">
+              <img src="src/assets/images/som/feat_integration.png" alt="BotBlox SAM9 Compute Module">
+            </div>
+            <div class="product-card-body">
+              <span class="product-category">Edge Compute</span>
+              <h3 class="product-title">SAM9 Compute Module</h3>
+              <p class="product-desc">
+                Low-power stackable microprocessor module running OpenWRT for edge network management and routing.
+              </p>
+              <div class="product-specs-list">
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Processor</span>
+                  <span class="product-spec-value">ARM926EJ-S 400MHz</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Input Voltage</span>
+                  <span class="product-spec-value">5V–60V DC Regulated</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Stacking</span>
+                  <span class="product-spec-value">RouterCore Compatible</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Form Factor</span>
+                  <span class="product-spec-value">44.5mm × 44.5mm</span>
+                </div>
+              </div>
+              <a href="contact.html?product=SAM9Module#quote" class="btn btn-primary" style="width: 100%;">Request Quote</a>
+            </div>
+          </div>
+
+          <!-- Product: SwitchBlox Rugged -->
+          <div class="product-card" data-category="networking">
+            <div class="product-image-wrap">
+              <img src="src/assets/images/product-switch.jpg" alt="BotBlox SwitchBlox Rugged Carrier">
+            </div>
+            <div class="product-card-body">
+              <span class="product-category">Edge Networking</span>
+              <h3 class="product-title">SwitchBlox Rugged (Carrier)</h3>
+              <p class="product-desc">
+                Ultra-rugged 5-port Gigabit Ethernet switch board with built-in mating headers for direct SOM integration.
+              </p>
+              <div class="product-specs-list">
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Ports</span>
+                  <span class="product-spec-value">5x 10/100/1000Base-T</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Altitude</span>
+                  <span class="product-spec-value">30,000+ ft Rated</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Connectors</span>
+                  <span class="product-spec-value">Molex PicoBlade</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Shock Rating</span>
+                  <span class="product-spec-value">MIL-STD-810H 90g</span>
+                </div>
+              </div>
+              <a href="contact.html?product=SwitchBloxRugged#quote" class="btn btn-primary" style="width: 100%;">Request Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site Footer (Always Black) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand-logo" style="margin-bottom: var(--space-4); display: inline-flex;">
+            <img src="src/assets/images/logo.png" alt="BotBlox logo" class="brand-icon">
+            <span>BotBlox Systems</span>
+          </a>
+          <p class="text-sm text-subtle" style="max-width: 320px; line-height: 1.6;">
+            Engineering miniature, ultra-rugged Ethernet switches, System-on-Modules, and radars for mission-critical autonomous systems.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-title">Products</div>
+          <ul class="footer-list">
+            <li><a href="products.html#networking">Edge Networking</a></li>
+            <li><a href="som.html">Edge Compute &amp; SOMs</a></li>
+            <li><a href="products.html#radar">Radar Sensors</a></li>
+            <li><a href="products.html">Product Catalog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-title">Company</div>
+          <ul class="footer-list">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="applications.html">Applications</a></li>
+            <li><a href="resources.html">Resources &amp; Docs</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-title">Contact</div>
+          <ul class="footer-list">
+            <li>info@botblox.com</li>
+            <li>Brooklyn, NY &amp; London, UK</li>
+            <li><a href="contact.html#quote">Request Architecture Quote</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 BOTBLOX INC. ALL RIGHTS RESERVED.</div>
+        <div class="footer-legal-links">
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="som.html">SOMs</a>
+          <a href="applications.html">Applications</a>
+          <a href="about.html">Company</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="src/js/main.js"></script>
+</body>
+</html>

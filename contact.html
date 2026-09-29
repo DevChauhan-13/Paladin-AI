@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Request a Quote | BotBlox Systems</title>
+  <meta name="description" content="Request a quotation, schedule technical integration consultation, or ask about NDAA-compliant embedded networking hardware.">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact &amp; Request a Quote | BotBlox Systems">
+  <meta property="og:image" content="src/assets/images/og-banner.png">
+  
+  <link rel="stylesheet" href="src/css/main.css">
+  <link rel="icon" type="image/png" href="src/assets/images/logo.png">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="brand-logo" aria-label="BotBlox Systems Home">
+          <img src="src/assets/images/logo.png" alt="BotBlox logo" class="brand-icon">
+          <span>BotBlox Systems</span>
+        </a>
+
+        <nav class="main-nav" id="mainNav">
+          <div class="nav-item">
+            <a href="products.html#networking" class="nav-link">Edge Networking</a>
+          </div>
+          <div class="nav-item">
+            <a href="som.html" class="nav-link">Edge Compute</a>
+          </div>
+          <div class="nav-item">
+            <a href="products.html#radar" class="nav-link">Radar</a>
+          </div>
+          <div class="nav-item">
+            <a href="applications.html" class="nav-link">Application</a>
+          </div>
+          <div class="nav-item">
+            <a href="about.html" class="nav-link">Company</a>
+          </div>
+          <div class="nav-item">
+            <a href="resources.html" class="nav-link">Resources</a>
+          </div>
+        </nav>
+
+        <div class="header-actions">
+          <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme">
+            <span class="theme-toggle-indicator"></span>
+            <span class="theme-toggle-text">WHITE</span>
+          </button>
+          <a href="products.html" class="btn-header-shop">Shop</a>
+          <a href="contact.html#quote" class="btn-header-quote">Request a Quote</a>
+          <button class="mobile-toggle" aria-label="Toggle navigation menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: 100px;">
+    <section class="section" id="quote" style="padding-top: var(--space-8); padding-bottom: var(--space-12);">
+      <div class="container">
+        <span class="tech-badge" style="margin-bottom: var(--space-3);">Engineering Consultation &amp; Sales</span>
+        <h1 class="text-xl" style="margin-bottom: var(--space-4);">Request a Quote &amp; Technical Support</h1>
+        <p class="text-base text-subtle" style="max-width: 680px; margin-bottom: var(--space-8);">
+          We maintain in-house stock on nearly all catalog items and respond to custom architecture inquiries within 24 business hours.
+        </p>
+
+        <div class="grid-2" style="align-items: flex-start; gap: var(--space-10);">
+          
+          <!-- Contact Form -->
+          <div class="card-panel corner-ticks" style="padding: var(--space-8);">
+            <form id="quoteForm" style="display: flex; flex-direction: column; gap: var(--space-4);">
+              <div class="grid-2" style="gap: var(--space-4);">
+                <div class="form-group" style="margin: 0;">
+                  <label class="form-label" for="firstName">First Name *</label>
+                  <input type="text" id="firstName" class="form-input" placeholder="e.g. Alex" required>
+                </div>
+                <div class="form-group" style="margin: 0;">
+                  <label class="form-label" for="lastName">Last Name *</label>
+                  <input type="text" id="lastName" class="form-input" placeholder="e.g. Mercer" required>
+                </div>
+              </div>
+
+              <div class="form-group" style="margin: 0;">
+                <label class="form-label" for="workEmail">Work Email *</label>
+                <input type="email" id="workEmail" class="form-input" placeholder="name@company.com" required>
+              </div>
+
+              <div class="grid-2" style="gap: var(--space-4);">
+                <div class="form-group" style="margin: 0;">
+                  <label class="form-label" for="companyName">Company / Organization *</label>
+                  <input type="text" id="companyName" class="form-input" placeholder="e.g. Aerospace Dynamics" required>
+                </div>
+                <div class="form-group" style="margin: 0;">
+                  <label class="form-label" for="domainSelect">Application Domain *</label>
+                  <select id="domainSelect" class="form-select" required>
+                    <option value="">Select Domain...</option>
+                    <option value="uav">UAVs &amp; Aerospace</option>
+                    <option value="space">Space &amp; Satellite (CubeSat)</option>
+                    <option value="subsea">Subsea &amp; Marine ROV</option>
+                    <option value="defense">Defense &amp; Tactical Systems</option>
+                    <option value="robotics">Ground Robotics / AGVs</option>
+                    <option value="industrial">Industrial Automation</option>
+                    <option value="motorsport">Motorsport Telemetry</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid-2" style="gap: var(--space-4);">
+                <div class="form-group" style="margin: 0;">
+                  <label class="form-label" for="hardwareInterest">Hardware of Interest</label>
+                  <select id="hardwareInterest" class="form-select">
+                    <option value="all">Multiple / System Solution</option>
+                    <option value="switchcore">SwitchCore (BB-SCO-B-1)</option>
+                    <option value="ubiswitch">UbiSwitch Managed Switch</option>
+                    <option value="gigablox">GigaBlox Nano</option>
+                    <option value="sbc">Rugged SBC Core v3.2</option>
+                    <option value="radar">ROBUST mmWave Radar</option>
+                    <option value="puck">Sealed Aluminum Puck</option>
+                    <option value="custom">Custom Engineering Design</option>
+                  </select>
+                </div>
+                <div class="form-group" style="margin: 0;">
+                  <label class="form-label" for="quantitySelect">Estimated Quantity</label>
+                  <select id="quantitySelect" class="form-select">
+                    <option value="sample">1 - 5 (Evaluation Samples)</option>
+                    <option value="pilot">6 - 50 (Pilot Batch)</option>
+                    <option value="production">50 - 500+ (Production Run)</option>
+                    <option value="fleet">1000+ (High Volume)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group" style="margin: 0;">
+                <label class="form-label" for="projectMessage">Mission Specifications &amp; Project Requirements</label>
+                <textarea id="projectMessage" class="form-textarea" placeholder="Detail any specific environmental constraints (e.g. -40C, altitude, 28V DC bus, MIL-STD shock requirements)..." rows="4"></textarea>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: var(--space-2); margin-top: var(--space-2);">
+                <input type="checkbox" id="ndaaRequired" style="accent-color: var(--color-7);">
+                <label for="ndaaRequired" class="text-xs" style="color: var(--color-13); cursor: pointer;">
+                  Requires strict NDAA Section 889 / EO13981 certified domestic manufacturing.
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="margin-top: var(--space-4); width: 100%; padding: 14px;">
+                Submit Inquiry →
+              </button>
+
+              <div id="formSuccessMessage" style="display: none; padding: 12px; background: rgba(0, 191, 165, 0.15); border: 1px solid #00bfa5; border-radius: var(--radius-sm); color: #00bfa5; font-size: var(--text-sm); text-align: center; margin-top: var(--space-3);">
+                Thank you! Your quote request has been routed directly to our Brooklyn engineering team.
+              </div>
+            </form>
+          </div>
+
+          <!-- Contact Details & Offices -->
+          <div>
+            <div class="card-panel corner-ticks" style="margin-bottom: var(--space-6);">
+              <span class="badge-mono" style="color: var(--color-7); margin-bottom: var(--space-2); display: block;">Headquarters</span>
+              <h3 class="text-md weight-bold text-white" style="margin-bottom: var(--space-3);">BotBlox Systems, Inc.</h3>
+              <p class="text-sm text-subtle" style="line-height: 1.6; margin-bottom: var(--space-4);">
+                141 Flushing Avenue<br>
+                Building 5, Suite 307<br>
+                Brooklyn, NY 11205<br>
+                United States
+              </p>
+              
+              <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: var(--space-4); margin-bottom: var(--space-4);">
+                <div class="text-xs" style="color: var(--border-color-7); margin-bottom: 4px;">Direct Technical Email</div>
+                <a href="mailto:info@botblox.com" class="text-sm text-white" style="font-family: var(--font-mono); color: var(--color-17);">info@botblox.com</a>
+              </div>
+
+              <div>
+                <div class="text-xs" style="color: var(--border-color-7); margin-bottom: 4px;">Quote Response Guarantee</div>
+                <p class="text-xs text-subtle">
+                  Standard quotes issued within 4 to 8 business hours. Stock orders ship domestically within 24-48 hours.
+                </p>
+              </div>
+            </div>
+
+            <div class="card-panel">
+              <h3 class="text-md weight-bold text-white" style="margin-bottom: var(--space-3);">Compliance &amp; Procurement Verification</h3>
+              <p class="text-sm text-subtle" style="line-height: 1.6; margin-bottom: var(--space-4);">
+                BotBlox actively supports defense primes, DoD contractors, and research universities with formal COTS procurement documentation, including:
+              </p>
+              <ul style="font-size: var(--text-xs); color: var(--color-13); display: flex; flex-direction: column; gap: 6px;">
+                <li>• CAGE Code &amp; SAM.gov Active Registration</li>
+                <li>• Certificates of Conformance (CoC)</li>
+                <li>• Full Material Composition Declarations (RoHS / REACH)</li>
+                <li>• Commercial Invoicing with Harmonized Tariff Codes (HS 8517.62)</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding: 0;">
+        <div>© 2026 BOTBLOX INC. ALL RIGHTS RESERVED.</div>
+        <div class="footer-legal-links">
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="applications.html">Applications</a>
+          <a href="about.html">About</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="src/js/main.js"></script>
+  <script>
+    const form = document.getElementById('quoteForm');
+    const success = document.getElementById('formSuccessMessage');
+    if (form && success) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        success.style.display = 'block';
+        form.reset();
+        setTimeout(() => {
+          success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+      });
+    }
+  </script>
+</body>
+</html>

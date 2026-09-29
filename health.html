@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paladin AI — Pipeline System Health &amp; Telemetry</title>
+  <meta name="description" content="Real-time latency metrics, sensor liveness, throughput benchmarks, and detector status for the Paladin AI threat engine.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Paladin AI — System Health">
+  <meta property="og:description" content="Latency, throughput, and sensor telemetry verifying uninterrupted threat detection.">
+
+  <!-- Chart.js v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="src/css/main.css">
+  <link rel="icon" type="image/png" href="src/assets/images/logo.png">
+</head>
+<body>
+
+
+  <!-- Site Header -->
+  <header class="site-header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <!-- Logo -->
+        <a href="index.html" class="brand-logo" aria-label="Paladin AI Landing Page">
+          <img src="src/assets/images/logo.png" alt="Paladin AI logo" class="brand-icon">
+          <span>Paladin AI</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
+          <div class="nav-item">
+            <a href="dashboard.html" class="nav-link">Live Triage</a>
+          </div>
+          <div class="nav-item">
+            <a href="investigation.html" class="nav-link">Investigation</a>
+          </div>
+          <div class="nav-item">
+            <a href="history.html" class="nav-link">Alert History</a>
+          </div>
+          <div class="nav-item active">
+            <a href="health.html" class="nav-link">System Health</a>
+          </div>
+          <div class="nav-item">
+            <a href="integrations.html" class="nav-link">Integrations</a>
+          </div>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme">
+            <span class="theme-toggle-indicator"></span>
+            <span class="theme-toggle-text">WHITE</span>
+          </button>
+          <a href="dashboard.html" class="btn-header-shop">Live Triage</a>
+          <a href="#" class="btn-header-quote">
+            <span class="soc-conn-dot" style="margin-right: 6px;"></span>
+            <span>PIPELINE HEALTHY</span>
+          </a>
+          <button class="mobile-toggle" aria-label="Toggle navigation menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Report Workspace Container -->
+  <main style="padding-top: 100px;">
+    <div class="soc-report-container">
+      
+      <!-- Top Title Area -->
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px; flex-wrap: wrap; gap: 16px;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+            <span class="tech-badge" style="color: var(--color-7);">SYSTEM TELEMETRY</span>
+            <span style="font-family: var(--font-mono); font-size: 11px; color: var(--soc-text-dim);">NTRO PROBLEM STATEMENT 26142 BENCHMARK</span>
+          </div>
+          <h1 class="text-xl" style="margin-bottom: 6px; text-transform: uppercase;">PIPELINE HEALTH &amp; SENSOR STATUS</h1>
+          <p class="text-base text-subtle" style="max-width: 680px;">
+            Live operational telemetry tracking end-to-end packet processing latency, line-rate diode throughput, and detector signature freshness.
+          </p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span class="soc-threat-badge ok" style="padding: 6px 12px; font-size: 11px;">● ALL 6 DETECTORS ONLINE</span>
+        </div>
+      </div>
+
+      <!-- Key Metrics Row (PRD 2.5) -->
+      <div class="soc-health-grid">
+        
+        <!-- Metric 1: E2E Latency -->
+        <div class="soc-metric-card">
+          <div class="soc-metric-top">
+            <span class="soc-metric-title">E2E PIPELINE LATENCY</span>
+            <span class="soc-metric-indicator">● OPTIMAL</span>
+          </div>
+          <div class="soc-metric-value-huge" id="metricLatencyVal" style="color: var(--soc-ok);">41.8 ms</div>
+          <div class="soc-metric-target">Capture to Kafka Emit (Target: &lt; 100 ms)</div>
+        </div>
+
+        <!-- Metric 2: Throughput -->
+        <div class="soc-metric-card">
+          <div class="soc-metric-top">
+            <span class="soc-metric-title">SUSTAINED INGRESS THROUGHPUT</span>
+            <span class="soc-metric-indicator">● 94.2% CAP</span>
+          </div>
+          <div class="soc-metric-value-huge" id="metricThroughputVal">9.42 Gbps</div>
+          <div class="soc-metric-target">Benchmark Tested: 10.0 Gbps Line Rate</div>
+        </div>
+
+        <!-- Metric 3: Flow Processing Rate -->
+        <div class="soc-metric-card">
+          <div class="soc-metric-top">
+            <span class="soc-metric-title">FLOW PROCESSING RATE</span>
+            <span class="soc-metric-indicator">● STREAMING</span>
+          </div>
+          <div class="soc-metric-value-huge" style="color: #ffffff;">46,280 /s</div>
+          <div class="soc-metric-target">Active Zeek &amp; Suricata TCP/UDP Flows</div>
+        </div>
+
+        <!-- Metric 4: Total Events Ingested Today -->
+        <div class="soc-metric-card">
+          <div class="soc-metric-top">
+            <span class="soc-metric-title">INGESTED DIODE EVENTS</span>
+            <span class="soc-metric-indicator">● PERSISTING</span>
+          </div>
+          <div class="soc-metric-value-huge" style="color: var(--color-15); font-size: 26px;">1.84 B</div>
+          <div class="soc-metric-target">Unidirectional Optical Diode Stream</div>
+        </div>
+
+      </div>
+
+      <!-- Latency Sparkline + Sensor Status Grid -->
+      <div class="grid-2" style="margin-bottom: 24px;">
+        
+        <!-- Left: Sensor Liveness (Zeek & Suricata) (PRD 2.5) -->
+        <div class="soc-chart-panel">
+          <div class="soc-panel-header">
+            <div>
+              <div class="soc-panel-title">
+                <span>📡</span>
+                <span>INGEST SENSOR LIVENESS</span>
+              </div>
+              <div class="soc-panel-subtitle">Network TAP and Packet Parsing Daemons</div>
+            </div>
+            <span style="font-family: var(--font-mono); font-size: 10px; color: var(--soc-ok);">ZERO LOSS</span>
+          </div>
+
+          <div class="soc-sensor-list" id="sensorsContainer">
+            <!-- Dynamically populated -->
+          </div>
+
+          <!-- Latency Rolling Chart -->
+          <div style="margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.06);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span style="font-family: var(--font-mono); font-size: 10.5px; font-weight: 600; color: var(--soc-text-subtle);">ROLLING LATENCY (LAST 12 MINUTES)</span>
+              <span style="font-family: var(--font-mono); font-size: 10px; color: var(--soc-ok);">JITTER &lt; 2.4ms</span>
+            </div>
+            <div style="height: 140px; position: relative;">
+              <canvas id="latencySparkline"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Throughput Graph vs Target Tested Benchmark (PRD 2.5) -->
+        <div class="soc-chart-panel">
+          <div class="soc-panel-header">
+            <div>
+              <div class="soc-panel-title">
+                <span>📈</span>
+                <span>THROUGHPUT VS 10 GBPS BENCHMARK TARGET</span>
+              </div>
+              <div class="soc-panel-subtitle">Simulated High-Volume Stress Run across Core Ingress Diode</div>
+            </div>
+          </div>
+
+          <div style="height: 280px; position: relative;">
+            <canvas id="throughputChart"></canvas>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Detectors Status Table (PRD 2.5) -->
+      <div class="soc-chart-panel" style="margin-bottom: 24px;">
+        <div class="soc-panel-header">
+          <div>
+            <div class="soc-panel-title">
+              <span>🧠</span>
+              <span>SIX ML &amp; HEURISTIC DETECTORS — MODEL SIGNATURE INTEGRITY</span>
+            </div>
+            <div class="soc-panel-subtitle">Offline Trained &amp; Cryptographically Signed Weight Import Status</div>
+          </div>
+          <span style="font-family: var(--font-mono); font-size: 10px; color: var(--soc-text-dim);">ED25519 VERIFIED</span>
+        </div>
+
+        <div style="overflow-x: auto;">
+          <table class="soc-detector-table">
+            <thead>
+              <tr>
+                <th>Detector Engine</th>
+                <th>Model Architecture</th>
+                <th>Operational Status</th>
+                <th>Model Version</th>
+                <th>Last Signed Import</th>
+              </tr>
+            </thead>
+            <tbody id="detectorsTableBody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Alert Volume & False-Positive Trend (PRD 2.5) -->
+      <div class="soc-chart-panel">
+        <div class="soc-panel-header">
+          <div>
+            <div class="soc-panel-title">
+              <span>📊</span>
+              <span>ALERT VOLUME &amp; FALSE-POSITIVE REDUCTION TREND (LAST 7 DAYS)</span>
+            </div>
+            <div class="soc-panel-subtitle">Demonstrates Progressive Meta-Scorer Convergence and Alert Fatigue Mitigation</div>
+          </div>
+          <span style="font-family: var(--font-mono); font-size: 10px; color: var(--soc-ok);">FP RATE REDUCED 82%</span>
+        </div>
+
+        <div style="height: 240px; position: relative;">
+          <canvas id="fpTrendChart"></canvas>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 PALADIN AI // NTRO CYBER THREAT MONITORING SYSTEM. ALL RIGHTS RESERVED.</div>
+        <div class="footer-legal-links">
+          <span style="color: var(--border-color-4);">Telemetry Refresh Rate: 4.5s</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="src/js/main.js"></script>
+  <script src="src/js/soc-health.js"></script>
+</body>
+</html>

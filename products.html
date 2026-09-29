@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products | Rugged Embedded Ethernet &amp; Compute — BotBlox</title>
+  <meta name="description" content="Explore BotBlox micro-switches, rugged Ethernet boards, System-on-Modules (SOMs), and mmWave radars for autonomous systems in extreme environments.">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Products | Rugged Embedded Ethernet &amp; Compute — BotBlox">
+  <meta property="og:image" content="src/assets/images/og-banner.png">
+  
+  <link rel="stylesheet" href="src/css/main.css">
+  <link rel="icon" type="image/png" href="src/assets/images/logo.png">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="brand-logo" aria-label="BotBlox Systems Home">
+          <img src="src/assets/images/logo.png" alt="BotBlox logo" class="brand-icon">
+          <span>BotBlox Systems</span>
+        </a>
+
+        <nav class="main-nav" id="mainNav">
+          <div class="nav-item active">
+            <a href="products.html#networking" class="nav-link has-dropdown">Edge Networking</a>
+            <div class="dropdown-menu">
+              <a href="products.html#networking" class="dropdown-link"><span>Overview</span><span>→</span></a>
+              <a href="products.html#boards" class="dropdown-link"><span>Boards</span><span>›</span></a>
+              <a href="products.html#cores" class="dropdown-link"><span>Cores &amp; Modules</span><span>›</span></a>
+              <a href="products.html#pucks" class="dropdown-link"><span>Pucks</span><span>›</span></a>
+              <a href="products.html#software" class="dropdown-link"><span>Software</span><span>›</span></a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="som.html" class="nav-link has-dropdown">Edge Compute</a>
+            <div class="dropdown-menu">
+              <a href="products.html#compute" class="dropdown-link"><span>Overview</span><span>→</span></a>
+              <a href="som.html" class="dropdown-link"><span>SOMs</span><span>›</span></a>
+              <a href="products.html#compute-boards" class="dropdown-link"><span>Boards</span><span>›</span></a>
+              <a href="products.html#software" class="dropdown-link"><span>Software</span><span>›</span></a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="products.html#radar" class="nav-link">Radar</a>
+          </div>
+          <div class="nav-item">
+            <a href="applications.html" class="nav-link">Application</a>
+          </div>
+          <div class="nav-item">
+            <a href="about.html" class="nav-link">Company</a>
+          </div>
+          <div class="nav-item">
+            <a href="resources.html" class="nav-link">Resources</a>
+          </div>
+        </nav>
+
+        <div class="header-actions">
+          <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme">
+            <span class="theme-toggle-indicator"></span>
+            <span class="theme-toggle-text">WHITE</span>
+          </button>
+          <a href="products.html" class="btn-header-shop">Shop</a>
+          <a href="contact.html#quote" class="btn-header-quote">Request a Quote</a>
+          <button class="mobile-toggle" aria-label="Toggle navigation menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: 100px;">
+    <!-- Catalog Header -->
+    <section class="section" style="padding-top: var(--space-8); padding-bottom: var(--space-8);">
+      <div class="container">
+        <span class="tech-badge" style="margin-bottom: var(--space-3);">Product Ecosystem</span>
+        <h1 class="text-xl" style="margin-bottom: var(--space-3);">Embedded Hardware for Harsh Environments</h1>
+        <p class="text-base text-subtle" style="max-width: 720px; margin-bottom: var(--space-6);">
+          Micro-sized, high-bandwidth Ethernet switches, ARM-based edge compute modules, and mmWave radars. Engineered for MIL-STD-810H shock and vibration, -40°C to +85°C operation, and low SWaP platforms.
+        </p>
+
+        <!-- Interactive Filter Pills -->
+        <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+          <button class="btn btn-primary" data-filter="all">All Products</button>
+          <button class="btn btn-secondary" data-filter="networking">Edge Networking</button>
+          <button class="btn btn-secondary" data-filter="compute">Edge Compute</button>
+          <button class="btn btn-secondary" data-filter="radar">Radar Sensors</button>
+          <button class="btn btn-secondary" data-filter="puck">Rugged Pucks</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Grid -->
+    <section class="section">
+      <div class="container">
+        <div class="grid-3" id="productGrid">
+
+          <!-- Product 1: SwitchCore -->
+          <div class="product-card" data-category="networking">
+            <div class="product-image-wrap">
+              <img src="src/assets/images/product-switch.jpg" alt="BotBlox SwitchCore Gigabit Ethernet Switch Module">
+            </div>
+            <div class="product-card-body">
+              <span class="product-category">Edge Networking</span>
+              <h3 class="product-title">SwitchCore (BB-SCO-B-1)</h3>
+              <p class="product-desc">
+                Ultra-compact, low-power unmanaged Gigabit Ethernet switch core module designed for direct integration on custom carrier boards.
+              </p>
+              <div class="product-specs-list">
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Ports</span>
+                  <span class="product-spec-value">5x 10/100/1000Base-T</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Size</span>
+                  <span class="product-spec-value">25mm × 25mm × 3.8mm</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Power</span>
+                  <span class="product-spec-value">3.3V DC / 1.2W</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Compliance</span>
+                  <span class="product-spec-value">NDAA Section 889</span>
+                </div>
+              </div>
+              <a href="contact.html?product=SwitchCore#quote" class="btn btn-primary" style="width: 100%;">Request Quote</a>
+            </div>
+          </div>
+
+          <!-- Product 2: UbiSwitch -->
+          <div class="product-card" data-category="networking">
+            <div class="product-image-wrap">
+              <img src="src/assets/images/product-switch.jpg" alt="BotBlox UbiSwitch Managed Rugged Switch">
+            </div>
+            <div class="product-card-body">
+              <span class="product-category">Edge Networking</span>
+              <h3 class="product-title">UbiSwitch Rugged Managed</h3>
+              <p class="product-desc">
+                Fully managed Gigabit and 10-Gigabit Ethernet switch board with Molex Picoblade connectors, onboard CLI, VLANs, and QoS.
+              </p>
+              <div class="product-specs-list">
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Ports</span>
+                  <span class="product-spec-value">8x GbE + 3x 10G SFP+</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Input Range</span>
+                  <span class="product-spec-value">9V - 60V DC Wide Input</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Operating Temp</span>
+                  <span class="product-spec-value">-40°C to +85°C</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Software</span>
+                  <span class="product-spec-value">Aries Web/CLI Management</span>
+                </div>
+              </div>
+              <a href="contact.html?product=UbiSwitch#quote" class="btn btn-primary" style="width: 100%;">Request Quote</a>
+            </div>
+          </div>
+
+          <!-- Product 3: GigaBlox Nano -->
+          <div class="product-card" data-category="networking">
+            <div class="product-image-wrap">
+              <img src="src/assets/images/product-switch.jpg" alt="BotBlox GigaBlox Nano Micro Switch">
+            </div>
+            <div class="product-card-body">
+              <span class="product-category">Edge Networking</span>
+              <h3 class="product-title">GigaBlox Nano</h3>
+              <p class="product-desc">
+                The world's smallest standalone Gigabit switch board. Plugs directly into camera feeds, autopilots, and sensor pods.
+              </p>
+              <div class="product-specs-list">
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Ports</span>
+                  <span class="product-spec-value">4x 10/100/1000Base-T</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Weight</span>
+                  <span class="product-spec-value">Only 8 grams</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Dimensions</span>
+                  <span class="product-spec-value">30mm × 30mm</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Voltage</span>
+                  <span class="product-spec-value">5V - 60V DC</span>
+                </div>
+              </div>
+              <a href="contact.html?product=GigaBlox-Nano#quote" class="btn btn-primary" style="width: 100%;">Request Quote</a>
+            </div>
+          </div>
+
+          <!-- Product 4: Rugged SOM -->
+          <div class="product-card" data-category="compute">
+            <div class="product-image-wrap">
+              <img src="src/assets/images/som/som_board_clean.png" alt="BotBlox Rugged SOM (BB-RSOM-A-1)">
+            </div>
+            <div class="product-card-body">
+              <span class="product-category">Edge Compute</span>
+              <h3 class="product-title">Rugged SOM (BB-RSOM-A-1)</h3>
+              <p class="product-desc">
+                High-reliability ARM Cortex-A7 System-on-Module designed to stack directly onto BotBlox Ethernet switch hardware.
+              </p>
+              <div class="product-specs-list">
+                <div class="product-spec-item">
+                  <span class="product-spec-label">CPU</span>
+                  <span class="product-spec-value">Arm Cortex A7 792MHz</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Memory</span>
+                  <span class="product-spec-value">512MB DDR3 + 8GB eMMC</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Temp Rating</span>
+                  <span class="product-spec-value">-40°C to +85°C</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">OS</span>
+                  <span class="product-spec-value">OpenWRT &amp; Embedded Linux</span>
+                </div>
+              </div>
+              <div style="display: flex; gap: var(--space-2); margin-top: var(--space-2);">
+                <a href="som.html" class="btn btn-secondary" style="flex: 1; text-align: center;">View Specs</a>
+                <a href="contact.html?product=RuggedSOM#quote" class="btn btn-primary" style="flex: 1; text-align: center;">Quote</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 4B: SAM9 Compute Module -->
+          <div class="product-card" data-category="compute">
+            <div class="product-image-wrap">
+              <img src="src/assets/images/som/feat_integration.png" alt="BotBlox SAM9 Stackable Compute Module">
+            </div>
+            <div class="product-card-body">
+              <span class="product-category">Edge Compute</span>
+              <h3 class="product-title">SAM9 Compute Module</h3>
+              <p class="product-desc">
+                Ultra-low-power ARM926 microprocessor SOM designed to mate directly with RouterCore switch architecture.
+              </p>
+              <div class="product-specs-list">
+                <div class="product-spec-item">
+                  <span class="product-spec-label">CPU</span>
+                  <span class="product-spec-value">ARM926EJ-S 400MHz</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Input</span>
+                  <span class="product-spec-value">5V–60V DC Regulated</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Stacking</span>
+                  <span class="product-spec-value">RouterCore Compatible</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Form Factor</span>
+                  <span class="product-spec-value">44.5mm × 44.5mm</span>
+                </div>
+              </div>
+              <div style="display: flex; gap: var(--space-2); margin-top: var(--space-2);">
+                <a href="som.html" class="btn btn-secondary" style="flex: 1; text-align: center;">View Specs</a>
+                <a href="contact.html?product=SAM9Module#quote" class="btn btn-primary" style="flex: 1; text-align: center;">Quote</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 5: mmWave Radar 77GHz -->
+          <div class="product-card" data-category="radar">
+            <div class="product-image-wrap">
+              <img src="src/assets/images/product-radar.jpg" alt="BotBlox Rugged mmWave Radar Sensor">
+            </div>
+            <div class="product-card-body">
+              <span class="product-category">Radar &amp; Sensing</span>
+              <h3 class="product-title">ROBUST MMW-RDR-V3.2</h3>
+              <p class="product-desc">
+                77-81 GHz FMCW radar sensor module with military shielding, onboard DSP for point-cloud generation, and IP67 sealed connector.
+              </p>
+              <div class="product-specs-list">
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Band</span>
+                  <span class="product-spec-value">77 - 81 GHz FMCW</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Max Range</span>
+                  <span class="product-spec-value">150 meters</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">FoV</span>
+                  <span class="product-spec-value">120° Azimuth × 30° Elevation</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Interface</span>
+                  <span class="product-spec-value">Ethernet Point-Cloud Stream</span>
+                </div>
+              </div>
+              <a href="contact.html?product=MMW-Radar#quote" class="btn btn-primary" style="width: 100%;">Request Quote</a>
+            </div>
+          </div>
+
+          <!-- Product 6: Rugged Sealed Puck Switch -->
+          <div class="product-card" data-category="puck">
+            <div class="product-image-wrap">
+              <img src="src/assets/images/product-switch.jpg" alt="BotBlox Rugged Aluminum Sealed Puck Switch">
+            </div>
+            <div class="product-card-body">
+              <span class="product-category">Rugged Pucks</span>
+              <h3 class="product-title">SwitchBlox Sealed Puck</h3>
+              <p class="product-desc">
+                CNC-machined aluminum IP67/IP68 sealed Ethernet switch with circular Amphenol/Glenair connectors for subsea and extreme dust environments.
+              </p>
+              <div class="product-specs-list">
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Enclosure</span>
+                  <span class="product-spec-value">Anodized 6061-T6 Aluminum</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Ingress</span>
+                  <span class="product-spec-value">IP68 Sealed (Hydrostatic 300m)</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Connectors</span>
+                  <span class="product-spec-value">Micro-Circular Military MIL-DTL</span>
+                </div>
+                <div class="product-spec-item">
+                  <span class="product-spec-label">Shock Rating</span>
+                  <span class="product-spec-value">90g Kinetic MIL-STD-810H</span>
+                </div>
+              </div>
+              <a href="contact.html?product=Sealed-Puck#quote" class="btn btn-primary" style="width: 100%;">Request Quote</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Datasheets & Custom Engineering Strip -->
+    <section class="section" style="background: #080a0d;">
+      <div class="container">
+        <div class="grid-2" style="align-items: center;">
+          <div>
+            <span class="tech-badge" style="margin-bottom: var(--space-3);">Engineering Services</span>
+            <h2 class="text-lg" style="margin-bottom: var(--space-4);">Need a custom board layout or carrier?</h2>
+            <p class="text-base text-subtle" style="margin-bottom: var(--space-6); line-height: 1.6;">
+              In addition to our off-the-shelf catalog, BotBlox provides tailored hardware integration, custom baseboard designs, conformal coating (Parylene / Silicone), and accelerated environmental qualification.
+            </p>
+            <a href="contact.html#quote" class="btn btn-primary">Speak With An Engineer →</a>
+          </div>
+
+          <div class="card-panel corner-ticks" style="background: rgba(10, 13, 16, 0.8);">
+            <h3 class="text-md weight-bold text-white" style="margin-bottom: var(--space-4);">Standard Product Assurances</h3>
+            <ul style="display: flex; flex-direction: column; gap: var(--space-3); font-size: var(--text-sm); color: var(--color-13);">
+              <li style="display: flex; gap: var(--space-3);">
+                <span style="color: var(--color-7);">✔</span>
+                <span><strong>MIL-STD-810H Certified:</strong> Tested under continuous network line-rate transmission.</span>
+              </li>
+              <li style="display: flex; gap: var(--space-3);">
+                <span style="color: var(--color-7);">✔</span>
+                <span><strong>NDAA &amp; EO13981 Compliance:</strong> Supply chain vetted for defense and BlueUAS platforms.</span>
+              </li>
+              <li style="display: flex; gap: var(--space-3);">
+                <span style="color: var(--color-7);">✔</span>
+                <span><strong>Long-Term Availability:</strong> Minimum 7-year component lifecycle roadmap.</span>
+              </li>
+              <li style="display: flex; gap: var(--space-3);">
+                <span style="color: var(--color-7);">✔</span>
+                <span><strong>Direct Engineering Support:</strong> Direct communication with the firmware and hardware design leads.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-grid">
+          <div>
+            <div style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
+              <img src="src/assets/images/logo.png" alt="BotBlox Systems" style="width: 32px; height: 32px;">
+              <span class="font-heading weight-bold text-white text-md">BotBlox Systems</span>
+            </div>
+            <p class="text-sm text-subtle" style="max-width: 300px; margin-bottom: var(--space-6);">
+              Rugged embedded networking and edge compute systems for autonomous platforms.
+            </p>
+          </div>
+          <div>
+            <div class="footer-column-title">Products</div>
+            <ul class="footer-links-list">
+              <li><a href="products.html#networking">Edge Networking</a></li>
+              <li><a href="products.html#compute">Edge Compute</a></li>
+              <li><a href="products.html#boards">Boards</a></li>
+              <li><a href="products.html#cores">Cores &amp; Modules</a></li>
+              <li><a href="products.html#pucks">Pucks</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="footer-column-title">Company</div>
+            <ul class="footer-links-list">
+              <li><a href="about.html">About us</a></li>
+              <li><a href="about.html#team">Team</a></li>
+              <li><a href="about.html#services">Services</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="footer-column-title">Resources</div>
+            <ul class="footer-links-list">
+              <li><a href="resources.html#docs">Documentation</a></li>
+              <li><a href="resources.html#blog">Technical Blog</a></li>
+              <li><a href="resources.html#case-studies">Case Studies</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="footer-column-title">Socials</div>
+            <ul class="footer-links-list">
+              <li><a href="https://x.com/bot_blox" target="_blank" rel="noopener">Twitter / X</a></li>
+              <li><a href="https://www.linkedin.com/company/botblox" target="_blank" rel="noopener">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 BOTBLOX INC. ALL RIGHTS RESERVED.</div>
+        <div class="footer-legal-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="src/js/main.js"></script>
+</body>
+</html>

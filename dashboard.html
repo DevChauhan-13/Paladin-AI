@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paladin AI — Live Triage Dashboard</title>
+  <meta name="description" content="Paladin AI streaming threat detection and live triage dashboard for unidirectional IP monitoring.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Paladin AI — Live Triage Dashboard">
+  <meta property="og:description" content="Real-time metadata threat detection and triage stream for NTRO unidirectional network links.">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="src/css/main.css">
+  <link rel="icon" type="image/png" href="src/assets/images/logo.png">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <!-- Logo -->
+        <a href="index.html" class="brand-logo" aria-label="Paladin AI Landing Page">
+          <img src="src/assets/images/logo.png" alt="Paladin AI logo" class="brand-icon">
+          <span>Paladin AI</span>
+        </a>
+
+        <!-- Desktop Navigation (5 Core PRD Features) -->
+        <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
+          <div class="nav-item active">
+            <a href="dashboard.html" class="nav-link">Live Triage</a>
+          </div>
+          <div class="nav-item">
+            <a href="investigation.html" class="nav-link">Investigation</a>
+          </div>
+          <div class="nav-item">
+            <a href="history.html" class="nav-link">Alert History</a>
+          </div>
+          <div class="nav-item">
+            <a href="health.html" class="nav-link">System Health</a>
+          </div>
+          <div class="nav-item">
+            <a href="integrations.html" class="nav-link">Integrations</a>
+          </div>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme">
+            <span class="theme-toggle-indicator"></span>
+            <span class="theme-toggle-text">WHITE</span>
+          </button>
+          <a href="#" class="btn-header-shop" id="headerExportBtn" title="Export current live alerts to CSV">Export CSV</a>
+          <a href="#" class="btn-header-quote" id="liveStreamBtn">
+            <span class="soc-conn-dot" id="liveStreamDot" style="margin-right: 6px;"></span>
+            <span id="liveStreamText">LIVE FEED</span>
+          </a>
+          <button class="mobile-toggle" aria-label="Toggle navigation menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Report Workspace -->
+  <main style="padding-top: 100px;">
+    <div class="soc-report-container">
+      
+      <!-- Topbar: Breadcrumb + Time Selector + Legend -->
+      <div class="soc-topbar">
+        <div class="soc-breadcrumb">
+          <span>PALADIN AI</span>
+          <span class="soc-breadcrumb-sep">/</span>
+          <span class="soc-breadcrumb-current">LIVE TRIAGE QUEUE</span>
+          <span class="soc-breadcrumb-sep">/</span>
+          <span style="color: var(--soc-text-dim);">DIODE STREAM A</span>
+        </div>
+
+        <div class="soc-topbar-controls">
+          <!-- Time Window Group -->
+          <div class="soc-tw-group">
+            <button class="soc-tw-btn" data-window="15m">15M</button>
+            <button class="soc-tw-btn" data-window="1h">1H</button>
+            <button class="soc-tw-btn" data-window="6h">6H</button>
+            <button class="soc-tw-btn is-active" data-window="24h">24H</button>
+          </div>
+
+          <!-- Severity Legend -->
+          <div class="soc-legend">
+            <div class="soc-legend-item">
+              <span class="soc-legend-dot crit"></span>
+              <span>CRIT</span>
+            </div>
+            <div class="soc-legend-item">
+              <span class="soc-legend-dot high"></span>
+              <span>HIGH</span>
+            </div>
+            <div class="soc-legend-item">
+              <span class="soc-legend-dot med"></span>
+              <span>MED</span>
+            </div>
+            <div class="soc-legend-item">
+              <span class="soc-legend-dot low"></span>
+              <span>LOW</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Labeling Stats Strip (PRD 2.1) -->
+      <div class="soc-stats-strip">
+        <div class="soc-stat-card">
+          <div class="soc-stat-label">
+            <span>Total Triage</span>
+            <span style="color: var(--soc-text-dim);">EVENTS</span>
+          </div>
+          <div class="soc-stat-value" id="statTotal">--</div>
+          <div class="soc-stat-subtext">24h Diode Ingest Buffer</div>
+        </div>
+
+        <div class="soc-stat-card">
+          <div class="soc-stat-label">
+            <span>Confirmed</span>
+            <span style="color: var(--soc-critical);">ACTIONABLE</span>
+          </div>
+          <div class="soc-stat-value crit" id="statConfirmed">--</div>
+          <div class="soc-stat-subtext">Verified Threat Incidents</div>
+        </div>
+
+        <div class="soc-stat-card">
+          <div class="soc-stat-label">
+            <span>False Positives</span>
+            <span style="color: var(--soc-text-dim);">TUNED OUT</span>
+          </div>
+          <div class="soc-stat-value sub" id="statFp">--</div>
+          <div class="soc-stat-subtext">Ruled Out by Analyst</div>
+        </div>
+
+        <div class="soc-stat-card">
+          <div class="soc-stat-label">
+            <span>Active Queue</span>
+            <span style="color: var(--soc-high);">PENDING</span>
+          </div>
+          <div class="soc-stat-value warn" id="statActive">--</div>
+          <div class="soc-stat-subtext">Requires Analyst Review</div>
+        </div>
+
+        <div class="soc-stat-card">
+          <div class="soc-stat-label">
+            <span>Analyst Precision</span>
+            <span style="color: var(--soc-ok);">ML HEALTH</span>
+          </div>
+          <div class="soc-stat-value ok" id="statPrecision">--%</div>
+          <div class="soc-stat-subtext">Confirmed / (Conf + FP)</div>
+        </div>
+      </div>
+
+      <!-- Filter & Search Bar -->
+      <div class="soc-filter-bar">
+        <div class="soc-search-wrap">
+          <span class="soc-search-icon">🔍</span>
+          <input type="text" id="feedSearchInput" class="form-input soc-search-input" placeholder="Search by IP, summary, domain, or flow ID...">
+        </div>
+
+        <select id="feedClassSelect" class="form-select soc-filter-select" aria-label="Filter by Threat Class">
+          <option value="all">All Threat Classes</option>
+          <option value="Volumetric/Protocol DDoS">Volumetric DDoS</option>
+          <option value="Botnet C2 Beaconing">Botnet C2 Beaconing</option>
+          <option value="DGA Domains / DNS Tunneling">DGA / DNS Tunnel</option>
+          <option value="Malware in Encrypted Sessions (TLS/QUIC)">Encrypted Malware (TLS/QUIC)</option>
+          <option value="Reconnaissance/Port Scanning">Port Scanning / Recon</option>
+          <option value="Data Exfiltration">Data Exfiltration</option>
+        </select>
+
+        <select id="feedSeveritySelect" class="form-select soc-filter-select" aria-label="Filter by Severity">
+          <option value="all">All Severities</option>
+          <option value="critical">Critical</option>
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
+
+        <select id="feedStateSelect" class="form-select soc-filter-select" aria-label="Filter by State">
+          <option value="all">All States</option>
+          <option value="active">Active (Unreviewed)</option>
+          <option value="confirmed">Confirmed Only</option>
+          <option value="false_positive">False Positives</option>
+        </select>
+
+        <!-- Sort Toggle (Severity × Conf vs Chronological) -->
+        <div class="soc-sort-group" title="Toggle sorting algorithm">
+          <button class="soc-sort-btn is-active" id="sortPriorityBtn">Priority (Sev × Conf)</button>
+          <button class="soc-sort-btn" id="sortTimeBtn">Arrival Time</button>
+        </div>
+      </div>
+
+      <!-- Dynamic Alert Feed (PRD 2.1) -->
+      <div class="soc-feed" id="alertFeed">
+        <!-- Rendered dynamically by soc-dashboard.js -->
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 PALADIN AI // NTRO CYBER THREAT MONITORING SYSTEM. ALL RIGHTS RESERVED.</div>
+        <div class="footer-legal-links">
+          <span style="color: var(--border-color-4);">Unidirectional Streaming Architecture</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts (Preloader excluded per user requirement) -->
+  <script src="src/js/main.js"></script>
+  <script src="src/js/soc-dashboard.js"></script>
+</body>
+</html>

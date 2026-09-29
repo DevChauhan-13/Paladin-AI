@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paladin AI | AI-Based Cyber Threat Detection System</title>
+  <meta name="description" content="Paladin AI provides real-time streaming threat detection and forensic triage for NTRO unidirectional network links and data diodes.">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Paladin AI | Cyber Threat Detection &amp; Analysis">
+  <meta property="og:description" content="Paladin AI provides real-time streaming threat detection and forensic triage for NTRO unidirectional network links and data diodes.">
+  <meta property="og:image" content="src/assets/images/og-banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="src/css/main.css">
+  <link rel="icon" type="image/png" href="src/assets/images/logo.png">
+</head>
+<body>
+
+  <!-- Fullscreen Dot-Matrix Preloader -->
+  <div class="preloader-overlay" id="preloaderOverlay">
+    <span class="preloader-crosshair top-left">+</span>
+    <span class="preloader-crosshair top-right">+</span>
+    <span class="preloader-crosshair bottom-left">+</span>
+    <span class="preloader-crosshair bottom-right">+</span>
+
+    <div class="preloader-side-text left">LOADING</div>
+    <div class="preloader-side-text right">LOADING</div>
+
+    <div class="preloader-canvas-container">
+      <canvas id="preloaderCanvas" class="preloader-canvas"></canvas>
+    </div>
+
+    <div class="preloader-counter-wrap" id="preloaderCounter">0%</div>
+  </div>
+
+  <!-- Site Header -->
+  <header class="site-header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <!-- Logo -->
+        <a href="index.html" class="brand-logo" aria-label="Paladin AI Home">
+          <img src="src/assets/images/logo.png" alt="Paladin AI logo" class="brand-icon">
+          <span>Paladin AI</span>
+        </a>
+
+        <!-- Desktop Navigation (5 Core PRD Features) -->
+        <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
+          <div class="nav-item">
+            <a href="dashboard.html" class="nav-link">Live Triage</a>
+          </div>
+          <div class="nav-item">
+            <a href="investigation.html" class="nav-link">Investigation</a>
+          </div>
+          <div class="nav-item">
+            <a href="history.html" class="nav-link">Alert History</a>
+          </div>
+          <div class="nav-item">
+            <a href="health.html" class="nav-link">System Health</a>
+          </div>
+          <div class="nav-item">
+            <a href="integrations.html" class="nav-link">Integrations</a>
+          </div>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme">
+            <span class="theme-toggle-indicator"></span>
+            <span class="theme-toggle-text">DARK</span>
+          </button>
+          <a href="dashboard.html" class="btn-header-shop">Dashboard</a>
+          <a href="dashboard.html" class="btn-header-quote">View Live Feed</a>
+          
+          <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="section-hero">
+      <div class="hero-video-wrapper">
+        <video id="heroVideoMain" class="hero-video is-active" src="src/assets/videos/botblox_hero.mp4" autoplay muted loop playsinline></video>
+        <div class="hero-gradient-overlay"></div>
+      </div>
+
+      <div class="hero-fluid-container">
+        <!-- Main Row: H1 Block on Left & Desc Block on Right -->
+        <div class="hero-main-row">
+          <!-- Left H1 Block (Badge + H1 Title) -->
+          <div class="hero-title-block">
+            <div class="hero-eyebrow-animated">
+              <span class="tech-badge-hero">
+                <span class="corner corner-tl"></span>
+                <span class="corner corner-tr"></span>
+                <span class="corner corner-br"></span>
+                <span class="corner corner-bl"></span>
+                AI-Powered Threat Detection
+              </span>
+            </div>
+
+            <div class="hero-title-container">
+              <h1 class="hero-title-animated">
+                <span class="hero-line-mask">
+                  <span class="hero-word">AI-Driven</span><span class="hero-word">Threat</span><span class="hero-word">Detection</span>
+                </span>
+                <span class="hero-line-mask">
+                  <span class="hero-word">For</span><span class="hero-word">Unidirectional</span><span class="hero-word">IP</span>
+                </span>
+                <span class="hero-line-mask">
+                  <span class="hero-word">Networks</span>
+                </span>
+              </h1>
+            </div>
+          </div>
+
+          <!-- Right Description Block -->
+          <div class="hero-desc-animated">
+            <div class="hero-desc-line"></div>
+            <p class="hero-desc-text">
+              Real-time metadata streaming threat<br>detection<br>for data-diode monitored enclaves.<br>Ensemble of 6 ML &amp; heuristic detectors<br>delivering calibrated high-precision alerts.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bottom CTA Button Wrapper -->
+        <div class="hero-btn-animated">
+          <a href="dashboard.html" class="hero-cta-btn">
+            <span class="btn-icon-prefix">↳</span> ENTER DASHBOARD
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: MISSION & OPERATIONAL CONTEXT -->
+    <section class="section section-mission" id="missionSection">
+      <span class="crosshair top-left">+</span>
+      <span class="crosshair top-right">+</span>
+      
+      <!-- Video Background -->
+      <div class="mission-video-bg">
+        <video class="mission-video" src="src/assets/videos/switchcore_clean.mp4" poster="src/assets/images/switchcore_poster.webp" autoplay muted loop playsinline></video>
+      </div>
+      <!-- Gradient fade: blends left edge of video into background -->
+      <div class="mission-video-fade"></div>
+
+      <div class="mission-container">
+        <div class="mission-grid">
+          <!-- Left Content Column (floats over video) -->
+          <div class="mission-content-col">
+            <div class="mission-eyebrow">
+              <div class="mission-badge">
+                <span class="corner corner-tl"></span>
+                <span class="corner corner-tr"></span>
+                <span class="corner corner-br"></span>
+                <span class="corner corner-bl"></span>
+                MISSION BRIEFING // NTRO PS 26142
+              </div>
+            </div>
+
+            <h2 class="mission-heading" id="missionHeading" aria-label="AI-driven threat detection engineered for physical unidirectional data diodes.">
+              <span class="mission-line">AI-driven threat detection</span>
+              <span class="mission-line">engineered for physical</span>
+              <span class="mission-line">unidirectional data diodes.</span>
+            </h2>
+
+            <p class="text-base text-subtle" style="margin-top: var(--space-4); max-width: 640px; line-height: 1.7;">
+              Standard bidirectional network intrusion detection engines require two-way handshakes and return ACK telemetry. In critical national infrastructure—nuclear facilities, defense command enclaves, and SCADA grids—optical data diodes physically isolate internal networks with a severed transmitter laser. Paladin AI solves this foundational constraint by reconstructing one-way flow dynamics and applying specialized machine learning models that operate purely on passive streaming metadata.
+            </p>
+
+            <div style="display: flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-6);">
+              <span class="tech-badge" style="font-size: 10px;">NTRO PS 26142</span>
+              <span class="tech-badge" style="font-size: 10px;">PHYSICAL RX DIODE ENFORCED</span>
+              <span class="tech-badge" style="font-size: 10px;">RFC 5424 CEF / LEEF</span>
+              <span class="tech-badge" style="font-size: 10px;">MITRE ATT&amp;CK MAPPED</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="crosshair bottom-right">+</span>
+    </section>
+
+    <!-- SECTION 3: PIPELINE ARCHITECTURE & INGESTION -->
+    <section class="section" style="padding-top: var(--space-12); padding-bottom: var(--space-12); background: #06080b;">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-6);">
+          <div>
+            <span class="badge-mono" style="color: var(--border-color-7); display: block; margin-bottom: var(--space-2);">STREAMING PIPELINE ARCHITECTURE</span>
+            <h2 class="text-lg">From Photons to Intelligence in Under 850ms</h2>
+            <p class="text-sm text-subtle" style="margin-top: var(--space-2); max-width: 700px;">
+              Passive optical taps stream flow metadata through Kafka, inference engines, and Bayesian calibration without touching the monitored network.
+            </p>
+          </div>
+          <a href="health.html" class="btn btn-secondary">
+            <span class="btn-icon-prefix">↳</span> Inspect Pipeline Health
+          </a>
+        </div>
+
+        <!-- Telemetry Benchmark Strip -->
+        <div class="paladin-hero-metrics" style="margin-top: 0; margin-bottom: var(--space-8);">
+          <div class="paladin-metric-item">
+            <div class="paladin-metric-val">
+              <span>10 Gbps+</span>
+              <span class="metric-pulse"></span>
+            </div>
+            <div class="paladin-metric-label">Passive Tap Throughput</div>
+            <div class="paladin-metric-sub">Continuous line-rate capture on RX fiber without drops</div>
+          </div>
+
+          <div class="paladin-metric-item">
+            <div class="paladin-metric-val">
+              <span>&lt; 850 ms</span>
+            </div>
+            <div class="paladin-metric-label">End-to-End Latency</div>
+            <div class="paladin-metric-sub">From optical packet ingest to SIEM alert emission</div>
+          </div>
+
+          <div class="paladin-metric-item">
+            <div class="paladin-metric-val">
+              <span>0.00%</span>
+            </div>
+            <div class="paladin-metric-label">Back-Channel Risk</div>
+            <div class="paladin-metric-sub">Physically severed TX laser guarantees enclave isolation</div>
+          </div>
+
+          <div class="paladin-metric-item">
+            <div class="paladin-metric-val">
+              <span>99.2%</span>
+            </div>
+            <div class="paladin-metric-label">Meta-Scorer Precision</div>
+            <div class="paladin-metric-sub">Bayesian calibration suppressing analyst alert fatigue</div>
+          </div>
+        </div>
+
+        <!-- 5-Step Pipeline Flow Diagram -->
+        <div class="paladin-pipeline-flow">
+          <div class="paladin-pipeline-step">
+            <div class="paladin-pipeline-num">
+              <span>01 // INGEST TAP</span>
+              <span>⚡</span>
+            </div>
+            <h3 class="paladin-pipeline-title">Optical Diode Capture</h3>
+            <p class="paladin-pipeline-desc">
+              Zeek and Suricata passively tap RX fiber optics, extracting metadata without sending a single packet into the enclave.
+            </p>
+            <div class="paladin-pipeline-meta">Passive Zeek / Suricata</div>
+          </div>
+
+          <div class="paladin-pipeline-step">
+            <div class="paladin-pipeline-num">
+              <span>02 // STREAM BUS</span>
+              <span>🔄</span>
+            </div>
+            <h3 class="paladin-pipeline-title">Kafka Event Stream</h3>
+            <p class="paladin-pipeline-desc">
+              High-throughput distributed message bus partitions packet records with micro-batching and zero backpressure drops.
+            </p>
+            <div class="paladin-pipeline-meta">Kafka Event Queue</div>
+          </div>
+
+          <div class="paladin-pipeline-step">
+            <div class="paladin-pipeline-num">
+              <span>03 // ENSEMBLE AI</span>
+              <span>🧠</span>
+            </div>
+            <h3 class="paladin-pipeline-title">Six ML Detectors</h3>
+            <p class="paladin-pipeline-desc">
+              Parallel inference across Volumetric DDoS, C2 Beaconing, DGA Tunneling, TLS Malware, Scans, &amp; Exfiltration.
+            </p>
+            <div class="paladin-pipeline-meta">6 Specialized Detectors</div>
+          </div>
+
+          <div class="paladin-pipeline-step">
+            <div class="paladin-pipeline-num">
+              <span>04 // SCORER</span>
+              <span>⚖️</span>
+            </div>
+            <h3 class="paladin-pipeline-title">Bayesian Meta-Scorer</h3>
+            <p class="paladin-pipeline-desc">
+              Calculates calibrated confidence percentiles and synthesizes "Why Not X" counterfactual reasoning for operators.
+            </p>
+            <div class="paladin-pipeline-meta">Meta-Scoring Engine</div>
+          </div>
+
+          <div class="paladin-pipeline-step">
+            <div class="paladin-pipeline-num">
+              <span>05 // DELIVERY</span>
+              <span>📡</span>
+            </div>
+            <h3 class="paladin-pipeline-title">Egress &amp; SIEM Output</h3>
+            <p class="paladin-pipeline-desc">
+              Egress forwarder delivers standardized JSON, CEF, and LEEF alerts to Splunk, Elastic, Sentinel, and ClickHouse cold storage.
+            </p>
+            <div class="paladin-pipeline-meta">RFC 5424 CEF / LEEF / JSON</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: THE SIX SPECIALIZED DETECTORS -->
+    <section class="section" id="detectors" style="background-color: #000; padding-top: var(--space-12); padding-bottom: var(--space-12);">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-8);">
+          <div>
+            <span class="tech-badge" style="margin-bottom: var(--space-3);">DETECTION ENSEMBLE</span>
+            <h2 class="text-xl">Six Autonomous Threat Detectors</h2>
+            <p class="text-base text-subtle" style="margin-top: var(--space-3); max-width: 680px;">
+              Engineered exclusively for unidirectional flows where TCP round-trips do not exist. Specialized statistical and ML classifiers trained on one-way metadata:
+            </p>
+          </div>
+          <a href="dashboard.html" class="btn btn-secondary">
+            <span class="btn-icon-prefix">↳</span> Launch Live Triage Queue
+          </a>
+        </div>
+
+        <div class="grid-3">
+          <!-- Detector 1: Volumetric DDoS -->
+          <div class="paladin-detector-card">
+            <div class="paladin-detector-header">
+              <div>
+                <span class="tech-badge" style="font-size: 9px; color: var(--soc-critical);">CRITICAL THREAT</span>
+                <h3 class="paladin-detector-title">Volumetric &amp; Protocol DDoS</h3>
+              </div>
+              <span class="badge-mono" style="color: var(--color-7);">01</span>
+            </div>
+            <p class="paladin-detector-desc">
+              Monitors sliding-window entropy across source IP addresses and packet sizes. Dynamically detects SYN floods, amplification bursts, and protocol exhaustion attacks in under 150 milliseconds.
+            </p>
+            <div class="paladin-detector-specs">
+              <div class="paladin-spec-row">
+                <span class="paladin-spec-label">Algorithm</span>
+                <span class="paladin-spec-val">Dynamic Poisson Entropy</span>
+              </div>
+              <div class="paladin-spec-row">
+                <span class="paladin-spec-label">Time Window</span>
+                <span class="paladin-spec-val">100ms - 5s Sliding</span>
+              </div>
+              <div class="paladin-spec-row">
+                <span class="paladin-spec-label">Evidence Type</span>
+                <span class="paladin-spec-val">Entropy vs. Threshold Line</span>
+              </div>
+            </div>
+            <div style="margin-top: var(--space-4);">
+              <a href="dashboard.html" class="btn btn-secondary text-xs" style="width: 100%;">View in Live Triage →</a>
+            </div>
+          </div>
+
+          <!-- Detector 2: Botnet C2 Beaconing -->
+          <div class="paladin-detector-card">
+            <div class="paladin-detector-header">
+              <div>
+                <span class="tech-badge" style="font-size: 9px; color: var(--soc-critical);">CRITICAL THREAT</span>
+                <h3 class="paladin-detector-title">Botnet C2 Beaconing</h3>
+              </div>
+              <span class="badge-mono" style="color: var(--color-7);">02</span>
+            </div>
+            <p class="paladin-detector-desc">
+              Analyzes inter-arrival time (IAT) frequency distributions of outbound requests. Uncovers covert command-and-control heartbeats even when masked by up to 20% randomized jitter.
+            </p>
+            <div class="paladin-detector-specs">
+              <div class="paladin-spec-row">
+                <span class="paladin-spec-label">Algorithm</span>
+                <span class="paladin-spec-val">IAT Autocorrelation &amp; Jitter</span>
+              </div>
+              <div class="paladin-spec-row">
+                <span class="paladin-spec-label">Jitter Tolerance</span>
+                <span class="paladin-spec-val">Up to 20% Randomization</span>
+              </div>
+              <div class="paladin-spec-row">
+                <span class="paladin-spec-label">Evidence Type</span>
+                <span class="paladin-spec-val">Periodicity Histogram</span>
+              </div>
+            </div>
+            <div style="margin-top: var(--space-4);">
+              <a href="dashboard.html" class="btn btn-secondary text-xs" style="width: 100%;">View in Live Triage →</a>
+            </div>
+          </div>
+
+          <!-- Detector 3: DGA / DNS Tunneling -->
+          <div class="paladin-detector-card">
+            <div class="paladin-detector-header">
+              <div>
+                <span class="tech-badge" style="font-size: 9px; color: var(--soc-critical);">CRITICAL THREAT</span>
+                <h3 class="paladin-detector-title">DGA Domains &amp; Tunneling</h3>
+              </div>
+              <span class="badge-mono" style="color: var(--color-7);">03</span>
+            </div>
+            <p class="paladin-detector-desc">
+              Applies character-level n-gram frequency scoring and Shannon entropy calculations against DNS queries. Identifies algorithmically generated domains and data hidden inside DNS labels.
+            </p>
+            <div class="paladin-detector-specs">
+              <div class="paladin-spec-row">
+                <span class="paladin-spec-label">Algorithm</span>
+                <span class="paladin-spec-val">Shannon Entropy &amp; Bi-Grams</span>
+              </div>
+              <div class="paladin-spec-row">
+                <span class="paladin-spec-label">Entropy Range</span>
+                <span class="paladin-spec-val">3.8 - 5.5 bits Threshold</span>
+              </div>
+              <div class="paladin-spec-row">
+                <span class="paladin-spec-label">Evidence Type</span>
+                <span class="paladin-spec-val">N-Gram Deviation Plot</span>
+              </div>
+            </div>
+            <div style="margin-top: var(--space-4);">
+              <a href="dashboard.html" class="btn btn-secondary text-xs" style="width: 100%;">View in Live Triage →</a>
+            </div>
+          </div>
+
+          <!-- Detector 4: Encrypted Traffic Malware -->
+          <div class="paladin-detector-card">
+            <div class="paladin-detector-header">
+              <div>
+                <span class="tech-badge" style="font-size: 9px; color: var(--soc-high);">HIGH SEVERITY</span>
+                <h3 class="paladin-detector-title">Malware in Encrypted Sessions</h3>
+              </div>
+              <span class="badge-mono" style="color: var(--color-7);">04</span>
+            </div>
+            <p class="paladin-detector-desc">
+              Inspects unencrypted TLS handshake headers and QUIC initial bursts. Uses JA4/JA3 fingerprint hashing and packet-size sequence transitions to spot malware without payload decryption.
+            </p>
+            <div class="paladin-detector-specs">
+              <div class="paladin-spec-row">
+                <span class="paladin-spec-label">Algorithm</span>
+                <span class="paladin-spec-val">JA4 Fingerprint + Sequence</span>
+              </div>
+              <div class="paladin-spec-row">
+                <span class="paladin-spec-label">Protocols</span>
+                <span class="paladin-spec-val">TLS 1.2 / 1.3 / QUIC</span>
+              </div>
+              <div class="paladin-spec-row">
+                <span class="paladin-spec-label">Evidence Type</span>
+                <span class="paladin-spec-val">Packet Size &amp; Timing Curve</span>
+              </div>
+            </div>
+            <div style="margin-top: var(--space-4);">
+              <a href="dashboard.html" class="btn btn-secondary text-xs" style="width: 100%;">View in Live Triage →</a>
+            </div>
+          </div>
+
+          <!-- Detector 5: Port Scan & Reconnaissance -->
+          <div class="paladin-detector-card">
+            <div class="paladin-detector-header">
+              <div>
+                <span class="tech-badge" style="font-size: 9px; color: var(--soc-medium);">MEDIUM SEVERITY</span>
+                <h3 class="paladin-detector-title">Reconnaissance &amp; Port Scans</h3>
+              </div>
+              <span class="badge-mono" style="color: var(--color-7);">05</span>
+            </div>
+            <p class="paladin-detector-desc">
+              Constructs fan-out connection matrices from individual source IPs. Catches horizontal subnet sweeps, vertical port scans, and slow reconnaissance before lateral exploitation occurs.
+            </p>
+            <div class="paladin-detector-specs">
+              <div class="paladin-spec-row">
+                <span class="paladin-spec-label">Algorithm</span>
+                <span class="paladin-spec-val">Source Fan-Out Dispersion</span>
+              </div>
+              <div class="paladin-spec-row">
+                <span class="paladin-spec-label">Protocols</span>
+                <span class="paladin-spec-val">TCP SYN, UDP, ICMP</span>
+              </div>
+              <div class="paladin-spec-row">
+                <span class="paladin-spec-label">Evidence Type</span>
+                <span class="paladin-spec-val">Host Fan-Out Matrix</span>
+              </div>
+            </div>
+            <div style="margin-top: var(--space-4);">
+              <a href="dashboard.html" class="btn btn-secondary text-xs" style="width: 100%;">View in Live Triage →</a>
+            </div>
+          </div>
+
+          <!-- Detector 6: Data Exfiltration -->
+          <div class="paladin-detector-card">
+            <div class="paladin-detector-header">
+              <div>
+                <span class="tech-badge" style="font-size: 9px; color: var(--soc-critical);">CRITICAL THREAT</span>
+                <h3 class="paladin-detector-title">Data Exfiltration Detection</h3>
+              </div>
+              <span class="badge-mono" style="color: var(--color-7);">06</span>
+            </div>
+            <p class="paladin-detector-desc">
+              Evaluates outbound vs. inbound byte ratio asymmetry over flow lifetimes. Unmasks unauthorized bulk data movements, steganographic exfiltration, and stealth archive uploads.
+            </p>
+            <div class="paladin-detector-specs">
+              <div class="paladin-spec-row">
+                <span class="paladin-spec-label">Algorithm</span>
+                <span class="paladin-spec-val">Byte Asymmetry Ratio</span>
+              </div>
+              <div class="paladin-spec-row">
+                <span class="paladin-spec-label">Threshold</span>
+                <span class="paladin-spec-val">&gt; 50:1 Outbound / Inbound</span>
+              </div>
+              <div class="paladin-spec-row">
+                <span class="paladin-spec-label">Evidence Type</span>
+                <span class="paladin-spec-val">Byte-Ratio Time-Series</span>
+              </div>
+            </div>
+            <div style="margin-top: var(--space-4);">
+              <a href="dashboard.html" class="btn btn-secondary text-xs" style="width: 100%;">View in Live Triage →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: WHY ENGINEERS CHOOSE PALADIN AI -->
+    <section class="section" style="background: #080a0d; padding-top: var(--space-12); padding-bottom: var(--space-12);">
+      <div class="container">
+        <div style="margin-bottom: var(--space-4);">
+          <span class="tech-badge">ENGINEERING PRINCIPLES</span>
+        </div>
+
+        <h2 class="text-xl" style="max-width: 800px; margin-bottom: var(--space-6);">
+          Engineered for High-Pressure SOC Operations
+        </h2>
+
+        <div style="max-width: 880px; margin-bottom: var(--space-10);">
+          <p class="text-base text-subtle" style="margin-bottom: var(--space-4); line-height: 1.7;">
+            Modern Security Operations Centers are crippled by alert fatigue, opaque black-box AI scores, and rigid architectures that fail in unidirectional network environments.
+          </p>
+          <p class="text-base text-subtle" style="margin-bottom: var(--space-6); line-height: 1.7;">
+            Paladin AI was engineered from first principles for national cyber defense: mathematical zero back-channel isolation, explainable confidence percentiles with counterfactual reasoning, and real-time analyst feedback loops that continuously refine detector precision.
+          </p>
+          <a href="investigation.html" class="btn btn-secondary">Explore Forensic Investigation Principles →</a>
+        </div>
+
+        <!-- 3 Pillars Row -->
+        <div class="grid-3" style="margin-bottom: var(--space-12);">
+          <div class="card-panel">
+            <span class="badge-mono" style="color: var(--color-7); font-size: 16px; margin-bottom: var(--space-3); display: block;">01</span>
+            <h3 class="text-md weight-bold text-white" style="margin-bottom: var(--space-2);">Physical Diode Assurance</h3>
+            <p class="text-sm text-subtle">
+              Operates exclusively on the RX termination of an optical fiber data diode. The TX laser is physically severed, making reverse packet injection mathematically impossible.
+            </p>
+          </div>
+
+          <div class="card-panel">
+            <span class="badge-mono" style="color: var(--color-7); font-size: 16px; margin-bottom: var(--space-3); display: block;">02</span>
+            <h3 class="text-md weight-bold text-white" style="margin-bottom: var(--space-2);">Bayesian Meta-Scoring</h3>
+            <p class="text-sm text-subtle">
+              Combines predictions from all six models into a single calibrated confidence percentile with explicit "Why Not X" counterfactuals, eliminating operator second-guessing.
+            </p>
+          </div>
+
+          <div class="card-panel">
+            <span class="badge-mono" style="color: var(--color-7); font-size: 16px; margin-bottom: var(--space-3); display: block;">03</span>
+            <h3 class="text-md weight-bold text-white" style="margin-bottom: var(--space-2);">Human-in-the-Loop Triage</h3>
+            <p class="text-sm text-subtle">
+              One-click threat labeling (Confirmed vs. False Positive) writes directly back to storage, establishing ground-truth datasets for signed model re-training.
+            </p>
+          </div>
+        </div>
+
+        <!-- Capability Matrix (4 Pillars) -->
+        <div class="grid-4" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: var(--space-8);">
+          <div class="stat-item">
+            <span class="badge-mono" style="color: var(--color-7); display: block; margin-bottom: var(--space-2);">Latency</span>
+            <h4 class="text-md weight-bold text-white" style="margin-bottom: var(--space-2);">&lt; 850 ms Median</h4>
+            <p class="text-sm text-subtle">
+              Sub-second end-to-end processing from optical line tap to SIEM alert generation.
+            </p>
+          </div>
+
+          <div class="stat-item">
+            <span class="badge-mono" style="color: var(--color-7); display: block; margin-bottom: var(--space-2);">Bandwidth</span>
+            <h4 class="text-md weight-bold text-white" style="margin-bottom: var(--space-2);">10 Gbps Line Rate</h4>
+            <p class="text-sm text-subtle">
+              High-throughput parallelized Kafka streaming handles hundreds of thousands of flows/sec.
+            </p>
+          </div>
+
+          <div class="stat-item">
+            <span class="badge-mono" style="color: var(--color-7); display: block; margin-bottom: var(--space-2);">Delivery</span>
+            <h4 class="text-md weight-bold text-white" style="margin-bottom: var(--space-2);">Zero Packet Drops</h4>
+            <p class="text-sm text-subtle">
+              Buffer-isolated architecture guarantees lossless streaming during peak traffic spikes.
+            </p>
+          </div>
+
+          <div class="stat-item">
+            <span class="badge-mono" style="color: var(--color-7); display: block; margin-bottom: var(--space-2);">Interoperability</span>
+            <h4 class="text-md weight-bold text-white" style="margin-bottom: var(--space-2);">CEF / LEEF / JSON</h4>
+            <p class="text-sm text-subtle">
+              Seamlessly integrates with Splunk, Elastic, Microsoft Sentinel, and cold ClickHouse archives.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: THE FIVE DEDICATED SOC CONSOLES -->
+    <section class="section" id="consoles" style="background-color: #000; padding-top: var(--space-12); padding-bottom: var(--space-12);">
+      <div class="container">
+        <div style="margin-bottom: var(--space-4);">
+          <span class="tech-badge">OPERATIONAL SUITE</span>
+        </div>
+        <h2 class="text-xl" style="margin-bottom: var(--space-3);">
+          Five Dedicated Workspaces for Rapid Cyber Triage
+        </h2>
+        <p class="text-base text-subtle" style="margin-bottom: var(--space-10); max-width: 640px;">
+          Every screen serves a dedicated mission: triage active threats, drill into forensic evidence, audit history, inspect pipeline health, and verify SIEM delivery.
+        </p>
+
+        <!-- 5 Core Console Cards -->
+        <div class="grid-3" style="margin-bottom: var(--space-6);">
+          <!-- Console 1: Live Triage -->
+          <div class="paladin-console-card">
+            <span class="badge-mono" style="color: var(--color-7); font-size: 11px; margin-bottom: var(--space-2); display: block;">CONSOLE 01 // ALWAYS OPEN</span>
+            <h3 class="text-md weight-bold text-white" style="margin-bottom: var(--space-2);">Live Triage Feed</h3>
+            <p class="text-sm text-subtle" style="margin-bottom: var(--space-4); line-height: 1.5; flex-grow: 1;">
+              Real-time priority feed sorted by severity × confidence. Features inline True/False Positive labeling, session precision metrics, and correlated alert badges.
+            </p>
+            <div style="margin-bottom: var(--space-4);">
+              <span class="tech-badge" style="font-size: 9px;">WEBSOCKET STREAM</span>
+              <span class="tech-badge" style="font-size: 9px;">INLINE ACTIONS</span>
+            </div>
+            <a href="dashboard.html" class="btn btn-secondary" style="width: 100%;">Open Live Triage →</a>
+          </div>
+
+          <!-- Console 2: Forensic Drill-Down -->
+          <div class="paladin-console-card">
+            <span class="badge-mono" style="color: var(--color-7); font-size: 11px; margin-bottom: var(--space-2); display: block;">CONSOLE 02 // FORENSIC VIEW</span>
+            <h3 class="text-md weight-bold text-white" style="margin-bottom: var(--space-2);">Forensic Investigation</h3>
+            <p class="text-sm text-subtle" style="margin-bottom: var(--space-4); line-height: 1.5; flex-grow: 1;">
+              Deep drill-down with detector-specific Chart.js visualizations, D3 2D blast radius connection graphs, KV feature tables, and "Why Not X" reasoning.
+            </p>
+            <div style="margin-bottom: var(--space-4);">
+              <span class="tech-badge" style="font-size: 9px;">BLAST RADIUS D3</span>
+              <span class="tech-badge" style="font-size: 9px;">WHY NOT X</span>
+            </div>
+            <a href="investigation.html" class="btn btn-secondary" style="width: 100%;">Launch Investigation →</a>
+          </div>
+
+          <!-- Console 3: Alert History -->
+          <div class="paladin-console-card">
+            <span class="badge-mono" style="color: var(--color-7); font-size: 11px; margin-bottom: var(--space-2); display: block;">CONSOLE 03 // AUDIT &amp; REVIEW</span>
+            <h3 class="text-md weight-bold text-white" style="margin-bottom: var(--space-2);">Alert History &amp; Audit</h3>
+            <p class="text-sm text-subtle" style="margin-bottom: var(--space-4); line-height: 1.5; flex-grow: 1;">
+              Searchable archive of 30+ historical incidents. Multi-parameter filtering by IP, threat class, and analyst labels with instant CSV/JSON exports.
+            </p>
+            <div style="margin-bottom: var(--space-4);">
+              <span class="tech-badge" style="font-size: 9px;">CSV / JSON EXPORT</span>
+              <span class="tech-badge" style="font-size: 9px;">LABEL AUDITING</span>
+            </div>
+            <a href="history.html" class="btn btn-secondary" style="width: 100%;">Search History Archive →</a>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <!-- Console 4: System Health -->
+          <div class="paladin-console-card">
+            <span class="badge-mono" style="color: var(--color-7); font-size: 11px; margin-bottom: var(--space-2); display: block;">CONSOLE 04 // PIPELINE TELEMETRY</span>
+            <h3 class="text-md weight-bold text-white" style="margin-bottom: var(--space-2);">System Health &amp; Benchmarks</h3>
+            <p class="text-sm text-subtle" style="margin-bottom: var(--space-4); line-height: 1.5; flex-grow: 1;">
+              Verifies sensor liveness for Zeek and Suricata, real-time end-to-end latency rolling charts, throughput metrics, and detector model health status.
+            </p>
+            <div style="margin-bottom: var(--space-4);">
+              <span class="tech-badge" style="font-size: 9px;">SENSOR LIVENESS</span>
+              <span class="tech-badge" style="font-size: 9px;">LATENCY CHARTS</span>
+            </div>
+            <a href="health.html" class="btn btn-secondary" style="width: 100%;">Inspect System Health →</a>
+          </div>
+
+          <!-- Console 5: Output & Integrations -->
+          <div class="paladin-console-card">
+            <span class="badge-mono" style="color: var(--color-7); font-size: 11px; margin-bottom: var(--space-2); display: block;">CONSOLE 05 // SIEM DELIVERY</span>
+            <h3 class="text-md weight-bold text-white" style="margin-bottom: var(--space-2);">Output &amp; SIEM Integrations</h3>
+            <p class="text-sm text-subtle" style="margin-bottom: var(--space-4); line-height: 1.5; flex-grow: 1;">
+              End-to-end verification confirming alert delivery to downstream Kafka clusters, cold ClickHouse archives, and the central NTRO command bus.
+            </p>
+            <div style="margin-bottom: var(--space-4);">
+              <span class="tech-badge" style="font-size: 9px;">KAFKA PRODUCER</span>
+              <span class="tech-badge" style="font-size: 9px;">CLICKHOUSE COLD ARCHIVE</span>
+            </div>
+            <a href="integrations.html" class="btn btn-secondary" style="width: 100%;">View Integrations Telemetry →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 7: INCIDENT SCENARIOS & CASE STUDIES -->
+    <section class="section" style="background: #06080b; padding-top: var(--space-12); padding-bottom: var(--space-12);">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-8);">
+          <div>
+            <span class="tech-badge" style="margin-bottom: var(--space-2);">FORENSIC CASE STUDIES</span>
+            <h2 class="text-lg">Real-World Threat Scenarios Mitigated</h2>
+            <p class="text-sm text-subtle" style="margin-top: var(--space-2);">How Paladin AI detects advanced persistent threats across unidirectional boundaries.</p>
+          </div>
+          <a href="history.html" class="btn btn-ghost">All Incident Archives →</a>
+        </div>
+
+        <div class="grid-3">
+          <!-- Case 1 -->
+          <div class="paladin-scenario-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+              <span class="badge-mono" style="color: var(--color-7); font-size: 11px;">ALT-2026-9041</span>
+              <span class="tech-badge" style="font-size: 9px; color: var(--soc-critical);">CONFIRMED THREAT</span>
+            </div>
+            <h3 class="text-md weight-bold text-white" style="margin-bottom: var(--space-2);">
+              Stealth Data Exfiltration over Unindexed External Tunnel
+            </h3>
+            <p class="text-sm text-subtle" style="margin-bottom: var(--space-4); line-height: 1.5; flex-grow: 1;">
+              Outbound byte asymmetry (418 MB out vs 14 KB in) detected on encrypted TCP port 8443. Meta-scorer assigned 0.96 confidence, ruling out normal backup sync via counterfactual evidence.
+            </p>
+            <div class="paladin-detector-specs">
+              <div class="paladin-spec-row">
+                <span class="paladin-spec-label">Source Host</span>
+                <span class="paladin-spec-val">10.0.12.84</span>
+              </div>
+              <div class="paladin-spec-row">
+                <span class="paladin-spec-label">Destination</span>
+                <span class="paladin-spec-val">198.51.100.42:8443</span>
+              </div>
+            </div>
+            <div style="margin-top: var(--space-3);">
+              <a href="investigation.html" class="btn btn-ghost text-xs" style="padding: 0;">Investigate Evidence →</a>
+            </div>
+          </div>
+
+          <!-- Case 2 -->
+          <div class="paladin-scenario-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+              <span class="badge-mono" style="color: var(--color-7); font-size: 11px;">ALT-2026-8812</span>
+              <span class="tech-badge" style="font-size: 9px; color: var(--soc-critical);">CONFIRMED THREAT</span>
+            </div>
+            <h3 class="text-md weight-bold text-white" style="margin-bottom: var(--space-2);">
+              Cobalt Strike C2 Beaconing with 15% Jitter
+            </h3>
+            <p class="text-sm text-subtle" style="margin-bottom: var(--space-4); line-height: 1.5; flex-grow: 1;">
+              Inter-arrival time distribution revealed persistent 60-second periodic beaconing despite random jitter. Blast radius analysis identified 8 compromised internal nodes.
+            </p>
+            <div class="paladin-detector-specs">
+              <div class="paladin-spec-row">
+                <span class="paladin-spec-label">Source Host</span>
+                <span class="paladin-spec-val">10.0.8.210</span>
+              </div>
+              <div class="paladin-spec-row">
+                <span class="paladin-spec-label">Destination</span>
+                <span class="paladin-spec-val">203.0.113.88:443</span>
+              </div>
+            </div>
+            <div style="margin-top: var(--space-3);">
+              <a href="investigation.html" class="btn btn-ghost text-xs" style="padding: 0;">Investigate Evidence →</a>
+            </div>
+          </div>
+
+          <!-- Case 3 -->
+          <div class="paladin-scenario-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+              <span class="badge-mono" style="color: var(--color-7); font-size: 11px;">ALT-2026-7734</span>
+              <span class="tech-badge" style="font-size: 9px; color: var(--soc-medium);">FALSE POSITIVE</span>
+            </div>
+            <h3 class="text-md weight-bold text-white" style="margin-bottom: var(--space-2);">
+              Internal Vulnerability Scanner Flagged as SYN Sweep
+            </h3>
+            <p class="text-sm text-subtle" style="margin-bottom: var(--space-4); line-height: 1.5; flex-grow: 1;">
+              Reconnaissance detector flagged rapid port fan-out. Analyst verified approved Nessus security audit scan and marked as False Positive, instantly retraining the local Bayesian prior.
+            </p>
+            <div class="paladin-detector-specs">
+              <div class="paladin-spec-row">
+                <span class="paladin-spec-label">Source Host</span>
+                <span class="paladin-spec-val">10.0.1.50</span>
+              </div>
+              <div class="paladin-spec-row">
+                <span class="paladin-spec-label">Target Range</span>
+                <span class="paladin-spec-val">10.0.0.0/16</span>
+              </div>
+            </div>
+            <div style="margin-top: var(--space-3);">
+              <a href="history.html" class="btn btn-ghost text-xs" style="padding: 0;">View Audit Log →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: TECHNICAL RESEARCH & PAPERS -->
+    <section class="section" style="background-color: #000; padding-top: var(--space-12); padding-bottom: var(--space-12);">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-8);">
+          <div>
+            <span class="tech-badge" style="margin-bottom: var(--space-2);">TECHNICAL PAPERS</span>
+            <h2 class="text-lg">Unidirectional Threat Analytics Research</h2>
+            <p class="text-sm text-subtle" style="margin-top: var(--space-2);">Engineering foundations of metadata-only inference on one-way physical links.</p>
+          </div>
+          <a href="integrations.html" class="btn btn-ghost">View Schema Specifications →</a>
+        </div>
+
+        <div class="grid-2">
+          <div class="card-panel">
+            <span class="badge-mono" style="color: var(--border-color-7); margin-bottom: var(--space-2); display: block;">Research Whitepaper · 2026</span>
+            <h3 class="text-md weight-bold text-white" style="margin-bottom: var(--space-3);">
+              Unidirectional Network Telemetry: Machine Learning on One-Way TCP Flows
+            </h3>
+            <p class="text-sm text-subtle" style="margin-bottom: var(--space-4); line-height: 1.6;">
+              How to reconstruct flow duration, sequence continuity, and byte asymmetry when TCP acknowledgments cannot return across physical fiber diode terminations.
+            </p>
+            <a href="integrations.html" class="btn btn-ghost text-xs" style="padding: 0;">Read Specification →</a>
+          </div>
+
+          <div class="card-panel">
+            <span class="badge-mono" style="color: var(--border-color-7); margin-bottom: var(--space-2); display: block;">Engineering Brief · 2026</span>
+            <h3 class="text-md weight-bold text-white" style="margin-bottom: var(--space-3);">
+              JA4 Fingerprinting &amp; Sequence Modeling: Classifying Encrypted Malware
+            </h3>
+            <p class="text-sm text-subtle" style="margin-bottom: var(--space-4); line-height: 1.6;">
+              Deep-dive into passive TLS and QUIC classification. Extracting cryptographically sound threat indicators from handshake parameters without SSL termination or decryption overhead.
+            </p>
+            <a href="integrations.html" class="btn btn-ghost text-xs" style="padding: 0;">Read Specification →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: CALL TO ACTION BAND -->
+    <section class="section" style="background: radial-gradient(circle at 50% 50%, rgba(213, 15, 59, 0.15) 0%, rgba(10, 13, 16, 0.95) 70%, #000 100%); text-align: center; padding-top: var(--space-14); padding-bottom: var(--space-14);">
+      <div class="container-narrow">
+        <h2 class="text-xl" style="margin-bottom: var(--space-6);">
+          Secure the Unidirectional Boundary.
+        </h2>
+        <p class="text-base text-subtle" style="max-width: 620px; margin: 0 auto var(--space-8); line-height: 1.6;">
+          Deploy AI-powered streaming threat detection designed specifically for air-gapped critical infrastructure and physical optical data diodes.
+        </p>
+        <div style="display: flex; justify-content: center; gap: var(--space-4); flex-wrap: wrap;">
+          <a href="dashboard.html" class="btn btn-primary" style="padding: 14px 32px; font-size: 13px;">
+            <span class="btn-icon-prefix">↳</span> Launch Live Triage Queue
+          </a>
+          <a href="investigation.html" class="btn btn-secondary" style="padding: 14px 32px; font-size: 13px;">
+            Forensic Investigation View
+          </a>
+          <a href="health.html" class="btn btn-secondary" style="padding: 14px 32px; font-size: 13px;">
+            System Pipeline Telemetry
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-grid">
+          <!-- Col 1: Brand & Newsletter -->
+          <div>
+            <div style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
+              <img src="src/assets/images/logo.png" alt="Paladin AI" style="width: 32px; height: 32px;">
+              <span class="font-heading weight-bold text-white text-md">PALADIN AI</span>
+            </div>
+            <p class="text-sm text-subtle" style="max-width: 300px; margin-bottom: var(--space-6);">
+              AI-powered streaming threat detection and forensic triage for NTRO unidirectional network links.
+            </p>
+            <div>
+              <span class="badge-mono" style="color: var(--border-color-7); display: block; margin-bottom: var(--space-2);">Security Operations Dispatch</span>
+              <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Analyst email address" required>
+                <button type="submit" class="newsletter-submit">Subscribe</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Col 2: Paladin Features -->
+          <div>
+            <div class="footer-column-title">Paladin AI Platform</div>
+            <ul class="footer-links-list">
+              <li><a href="dashboard.html">Live Triage Feed</a></li>
+              <li><a href="investigation.html">Forensic Investigation</a></li>
+              <li><a href="history.html">Incident History &amp; Audit</a></li>
+              <li><a href="health.html">Pipeline Telemetry</a></li>
+              <li><a href="integrations.html">SIEM Integrations</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Architecture -->
+          <div>
+            <div class="footer-column-title">Architecture</div>
+            <ul class="footer-links-list">
+              <li><a href="health.html">Zeek &amp; Suricata TAP</a></li>
+              <li><a href="health.html">Kafka Ingest Pipeline</a></li>
+              <li><a href="health.html">Six ML Detectors</a></li>
+              <li><a href="investigation.html">Bayesian Meta-Scorer</a></li>
+              <li><a href="integrations.html">Data Diode Hardware</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Threat Classes -->
+          <div>
+            <div class="footer-column-title">Threat Classes</div>
+            <ul class="footer-links-list">
+              <li><a href="dashboard.html">Volumetric DDoS</a></li>
+              <li><a href="dashboard.html">Botnet C2 Beaconing</a></li>
+              <li><a href="dashboard.html">DGA / DNS Tunneling</a></li>
+              <li><a href="dashboard.html">TLS/QUIC Encrypted Malware</a></li>
+              <li><a href="dashboard.html">Port Scan / Reconnaissance</a></li>
+              <li><a href="dashboard.html">Data Exfiltration</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 5: Compliance -->
+          <div>
+            <div class="footer-column-title">Standards</div>
+            <ul class="footer-links-list">
+              <li><a href="integrations.html">NTRO Problem Statement 26142</a></li>
+              <li><a href="integrations.html">CEF / LEEF Syslog Standards</a></li>
+              <li><a href="integrations.html">MITRE ATT&amp;CK Framework</a></li>
+              <li><a href="integrations.html">Optical Diode Enforcement</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <div>
+          © 2026 PALADIN AI // NTRO CYBER THREAT MONITORING SYSTEM. ALL RIGHTS RESERVED.
+        </div>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+          <span style="color: var(--border-color-4);">Engineered for NTRO SIH 2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="src/js/main.js"></script>
+  <script src="src/js/matrix_data.js"></script>
+  <script src="src/js/preloader.js"></script>
+</body>
+</html>
+

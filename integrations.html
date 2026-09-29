@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paladin AI — Output Delivery &amp; SIEM Integrations</title>
+  <meta name="description" content="Downstream SIEM forwarding status, cold alert storage persistence confirmations, and end-to-end pipeline delivery tracking.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Paladin AI — Integrations Status">
+  <meta property="og:description" content="Downstream SIEM and cold storage delivery telemetry for Paladin AI.">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="src/css/main.css">
+  <link rel="icon" type="image/png" href="src/assets/images/logo.png">
+</head>
+<body>
+
+
+  <!-- Site Header -->
+  <header class="site-header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <!-- Logo -->
+        <a href="index.html" class="brand-logo" aria-label="Paladin AI Landing Page">
+          <img src="src/assets/images/logo.png" alt="Paladin AI logo" class="brand-icon">
+          <span>Paladin AI</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
+          <div class="nav-item">
+            <a href="dashboard.html" class="nav-link">Live Triage</a>
+          </div>
+          <div class="nav-item">
+            <a href="investigation.html" class="nav-link">Investigation</a>
+          </div>
+          <div class="nav-item">
+            <a href="history.html" class="nav-link">Alert History</a>
+          </div>
+          <div class="nav-item">
+            <a href="health.html" class="nav-link">System Health</a>
+          </div>
+          <div class="nav-item active">
+            <a href="integrations.html" class="nav-link">Integrations</a>
+          </div>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme">
+            <span class="theme-toggle-indicator"></span>
+            <span class="theme-toggle-text">WHITE</span>
+          </button>
+          <a href="dashboard.html" class="btn-header-shop">Live Triage</a>
+          <a href="#" class="btn-header-quote">
+            <span class="soc-conn-dot" style="margin-right: 6px;"></span>
+            <span>SIEM ACTIVE</span>
+          </a>
+          <button class="mobile-toggle" aria-label="Toggle navigation menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Report Workspace -->
+  <main style="padding-top: 100px;">
+    <div class="soc-report-container">
+      
+      <!-- Top Title Area -->
+      <div style="margin-bottom: 28px;">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+          <span class="tech-badge" style="color: var(--color-7);">SYSTEM ARCHITECTURE OUTPUTS</span>
+          <span style="font-family: var(--font-mono); font-size: 11px; color: var(--soc-text-dim);">NTRO DATA DIODE EGRESS</span>
+        </div>
+        <h1 class="text-xl" style="margin-bottom: 6px; text-transform: uppercase;">OUTPUT &amp; INTEGRATION STATUS</h1>
+        <p class="text-base text-subtle" style="max-width: 680px;">
+          Verification of real-time alert delivery from the streaming inference engine to downstream SIEM endpoints, cold persistence storage, and external ticketing buses.
+        </p>
+      </div>
+
+      <!-- End-to-End Pipeline Stepper Strip (PRD 2.6) -->
+      <div class="soc-pipeline-strip">
+        
+        <!-- Step 1: Ingest -->
+        <div class="soc-pipeline-step">
+          <div class="soc-pipeline-circle">✓</div>
+          <div class="soc-pipeline-title">1. INGEST</div>
+          <div class="soc-pipeline-sub">Zeek / Suricata TAP</div>
+        </div>
+
+        <div class="soc-pipeline-connector"></div>
+
+        <!-- Step 2: Stream Processing -->
+        <div class="soc-pipeline-step">
+          <div class="soc-pipeline-circle">✓</div>
+          <div class="soc-pipeline-title">2. STREAM</div>
+          <div class="soc-pipeline-sub">Kafka Ingest Topic</div>
+        </div>
+
+        <div class="soc-pipeline-connector"></div>
+
+        <!-- Step 3: Detection -->
+        <div class="soc-pipeline-step">
+          <div class="soc-pipeline-circle">✓</div>
+          <div class="soc-pipeline-title">3. DETECT</div>
+          <div class="soc-pipeline-sub">6 ML &amp; Rule Engines</div>
+        </div>
+
+        <div class="soc-pipeline-connector"></div>
+
+        <!-- Step 4: Scoring -->
+        <div class="soc-pipeline-step">
+          <div class="soc-pipeline-circle">✓</div>
+          <div class="soc-pipeline-title">4. SCORE</div>
+          <div class="soc-pipeline-sub">Meta-Scorer Ensemble</div>
+        </div>
+
+        <div class="soc-pipeline-connector"></div>
+
+        <!-- Step 5: Output -->
+        <div class="soc-pipeline-step">
+          <div class="soc-pipeline-circle" style="background: rgba(213, 15, 59, 0.15); border-color: var(--soc-critical); color: var(--soc-critical); box-shadow: 0 0 10px rgba(213, 15, 59, 0.3);">⚡</div>
+          <div class="soc-pipeline-title" style="color: var(--soc-critical);">5. OUTPUT</div>
+          <div class="soc-pipeline-sub">SIEM &amp; Persistent DB</div>
+        </div>
+
+      </div>
+
+      <!-- Downstream Delivery Endpoints Grid (PRD 2.6) -->
+      <div class="soc-delivery-grid">
+        
+        <!-- Delivery Card 1: SIEM Forwarding -->
+        <div class="soc-delivery-card">
+          <div class="soc-delivery-header">
+            <div>
+              <span class="tech-badge" style="font-size: 9.5px; color: var(--soc-ok);">INGEST-ONLY DIODE LINK</span>
+              <h2 style="font-family: var(--font-heading); font-size: 16px; font-weight: 700; margin-top: 4px;">SIEM Forwarding Gateway</h2>
+            </div>
+            <span class="soc-delivery-status">● CONNECTED</span>
+          </div>
+
+          <p style="font-size: 12.5px; color: var(--soc-text-subtle); line-height: 1.45;">
+            High-reliability syslog (RFC 5424 CEF/LEEF) and Kafka producer delivering standardized JSON alert records to the security analytics cluster.
+          </p>
+
+          <div class="soc-kv-list" style="margin-top: auto;">
+            <div class="soc-kv-row">
+              <span class="soc-kv-label">Target Cluster</span>
+              <span class="soc-kv-value">kafka-egress-prod.ntro.internal:9092</span>
+            </div>
+            <div class="soc-kv-row">
+              <span class="soc-kv-label">Delivery Topic</span>
+              <span class="soc-kv-value mono">paladin.alerts.standardized.v1</span>
+            </div>
+            <div class="soc-kv-row">
+              <span class="soc-kv-label">Last Successful ACK</span>
+              <span class="soc-kv-value" style="color: var(--soc-ok); font-weight: 700;">2.4 seconds ago</span>
+            </div>
+            <div class="soc-kv-row">
+              <span class="soc-kv-label">Producer Buffer</span>
+              <span class="soc-kv-value">0 queued / 0 drops</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Delivery Card 2: Alert Storage Persistence -->
+        <div class="soc-delivery-card">
+          <div class="soc-delivery-header">
+            <div>
+              <span class="tech-badge" style="font-size: 9.5px; color: var(--soc-ok);">COLD STORAGE ARCHIVE</span>
+              <h2 style="font-family: var(--font-heading); font-size: 16px; font-weight: 700; margin-top: 4px;">Persistent Alert Storage</h2>
+            </div>
+            <span class="soc-delivery-status">● WRITING</span>
+          </div>
+
+          <p style="font-size: 12.5px; color: var(--soc-text-subtle); line-height: 1.45;">
+            Append-only columnar storage engine persisting raw metadata features, analyst labeling ground truth, and calibrated confidence percentiles.
+          </p>
+
+          <div class="soc-kv-list" style="margin-top: auto;">
+            <div class="soc-kv-row">
+              <span class="soc-kv-label">Storage Backend</span>
+              <span class="soc-kv-value">ClickHouse Columnar Cluster</span>
+            </div>
+            <div class="soc-kv-row">
+              <span class="soc-kv-label">Active Partition</span>
+              <span class="soc-kv-value mono">paladin_alerts_2026_09</span>
+            </div>
+            <div class="soc-kv-row">
+              <span class="soc-kv-label">Last Write Confirmation</span>
+              <span class="soc-kv-value" style="color: var(--soc-ok); font-weight: 700;">0.8 seconds ago</span>
+            </div>
+            <div class="soc-kv-row">
+              <span class="soc-kv-label">Retention Policy</span>
+              <span class="soc-kv-value">365 Days (Encrypted at rest)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Delivery Card 3: NTRO HQ Command Bus -->
+        <div class="soc-delivery-card">
+          <div class="soc-delivery-header">
+            <div>
+              <span class="tech-badge" style="font-size: 9.5px; color: var(--soc-ok);">COMMAND BUS</span>
+              <h2 style="font-family: var(--font-heading); font-size: 16px; font-weight: 700; margin-top: 4px;">NTRO Central Threat Bus</h2>
+            </div>
+            <span class="soc-delivery-status">● VERIFIED</span>
+          </div>
+
+          <p style="font-size: 12.5px; color: var(--soc-text-subtle); line-height: 1.45;">
+            Mutual-TLS encrypted webhook endpoint propagating critical severity incidents to high-echelon national threat operations.
+          </p>
+
+          <div class="soc-kv-list" style="margin-top: auto;">
+            <div class="soc-kv-row">
+              <span class="soc-kv-label">Auth Protocol</span>
+              <span class="soc-kv-value">mTLS + HMAC-SHA256 Token</span>
+            </div>
+            <div class="soc-kv-row">
+              <span class="soc-kv-label">Severity Filter</span>
+              <span class="soc-kv-value" style="color: var(--soc-critical); font-weight: 700;">CRITICAL &amp; HIGH ONLY</span>
+            </div>
+            <div class="soc-kv-row">
+              <span class="soc-kv-label">Last Egress Heartbeat</span>
+              <span class="soc-kv-value" style="color: var(--soc-ok);">14 seconds ago (HTTP 200)</span>
+            </div>
+            <div class="soc-kv-row">
+              <span class="soc-kv-label">Circuit Breaker</span>
+              <span class="soc-kv-value">CLOSED (Normal Operation)</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Protocol Specifications Panel -->
+      <div class="soc-chart-panel">
+        <div class="soc-panel-header">
+          <div>
+            <div class="soc-panel-title">
+              <span>📜</span>
+              <span>EGRESS SCHEMAS &amp; UNIDIRECTIONAL DIODE GUARANTEES</span>
+            </div>
+            <div class="soc-panel-subtitle">Hardware and Software Enforcement Specifications</div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <h3 style="font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; color: #ffffff; margin-bottom: 8px;">
+              Physical Diode Enforceability
+            </h3>
+            <p style="font-size: 12.5px; color: var(--soc-text-subtle); line-height: 1.5;">
+              Paladin AI operates strictly on the receiver (RX) termination of an optical fiber data diode. The transmitter (TX) laser is physically severed on the ingest interface, guaranteeing mathematical impossibility of packet injection or back-channel exfiltration into the monitored enclave.
+            </p>
+          </div>
+
+          <div>
+            <h3 style="font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; color: #ffffff; margin-bottom: 8px;">
+              Standardized Schema Compliance
+            </h3>
+            <p style="font-size: 12.5px; color: var(--soc-text-subtle); line-height: 1.5;">
+              Every emitted alert conforms to the unified <code>paladin.alert.schema.v1</code> definition containing <code>timestamp</code>, <code>flow_id</code>, <code>threat_class</code>, <code>confidence</code>, and detector-specific <code>evidence</code> vectors, ready for immediate ingestion into SIEM parsers without transformation.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 PALADIN AI // NTRO CYBER THREAT MONITORING SYSTEM. ALL RIGHTS RESERVED.</div>
+        <div class="footer-legal-links">
+          <span style="color: var(--border-color-4);">All Egress Connections Active</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="src/js/main.js"></script>
+</body>
+</html>

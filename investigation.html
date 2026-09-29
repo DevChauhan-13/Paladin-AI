@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paladin AI — Alert Forensic Investigation</title>
+  <meta name="description" content="Forensic deep dive, detector evidence visualizations, and 2D blast radius topology analysis for Paladin AI threat alerts.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Paladin AI — Alert Investigation">
+  <meta property="og:description" content="Forensic deep dive, evidence charts, and blast radius for unidirectional cyber threats.">
+
+  <!-- External Visual Libraries (Chart.js v4 & D3.js v7) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="src/css/main.css">
+  <link rel="icon" type="image/png" href="src/assets/images/logo.png">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <!-- Logo -->
+        <a href="index.html" class="brand-logo" aria-label="Paladin AI Landing Page">
+          <img src="src/assets/images/logo.png" alt="Paladin AI logo" class="brand-icon">
+          <span>Paladin AI</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
+          <div class="nav-item">
+            <a href="dashboard.html" class="nav-link">Live Triage</a>
+          </div>
+          <div class="nav-item active">
+            <a href="investigation.html" class="nav-link">Investigation</a>
+          </div>
+          <div class="nav-item">
+            <a href="history.html" class="nav-link">Alert History</a>
+          </div>
+          <div class="nav-item">
+            <a href="health.html" class="nav-link">System Health</a>
+          </div>
+          <div class="nav-item">
+            <a href="integrations.html" class="nav-link">Integrations</a>
+          </div>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme">
+            <span class="theme-toggle-indicator"></span>
+            <span class="theme-toggle-text">WHITE</span>
+          </button>
+          <a href="dashboard.html" class="btn-header-shop">← Back Feed</a>
+          <a href="#" class="btn-header-quote">
+            <span class="soc-conn-dot" style="margin-right: 6px;"></span>
+            <span>DIODE LIVE</span>
+          </a>
+          <button class="mobile-toggle" aria-label="Toggle navigation menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Investigation Workspace -->
+  <main style="padding-top: 100px;">
+    <div class="soc-report-container">
+      
+      <!-- Back Link & Header Banner (PRD 2.2) -->
+      <div class="soc-investigation-header">
+        <div class="soc-inv-topline">
+          <a href="dashboard.html" class="soc-back-link">
+            <span>←</span> BACK TO LIVE TRIAGE FEED
+          </a>
+
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span id="invClassBadge" class="soc-threat-badge crit">--</span>
+            <span id="invStateBadge" class="soc-state-badge active">--</span>
+            <span class="soc-calib-pill" id="invCalib">Confidence: --%</span>
+          </div>
+        </div>
+
+        <h1 class="soc-inv-title" id="invTitle">Loading incident evidence...</h1>
+
+        <div class="soc-inv-meta-bar">
+          <div class="soc-inv-meta-item">Flow: <strong id="invFlowId">--</strong></div>
+          <div class="soc-inv-meta-item">Network: <strong id="invNetwork">--</strong></div>
+          <div class="soc-inv-meta-item">Observed: <strong id="invTimestamp">--</strong></div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div style="display: flex; align-items: center; gap: 10px; margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.07); flex-wrap: wrap;">
+          <button class="soc-btn-sm soc-btn-confirm" id="invConfirmBtn">
+            <span>✓</span> Confirm Threat
+          </button>
+          <button class="soc-btn-sm soc-btn-fp" id="invFpBtn">
+            <span>✕</span> Mark False Positive
+          </button>
+          <div style="display: flex; align-items: center; gap: 6px; margin-left: auto;">
+            <input type="text" id="invNoteInput" class="soc-note-input" style="min-width: 260px;" placeholder="Add analyst forensic assessment note...">
+            <button class="soc-btn-sm soc-btn-fp" id="invSaveNoteBtn">Save Note</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Evidence Grid (PRD 2.2 & 2.3) -->
+      <div class="soc-evidence-grid">
+        
+        <!-- Left: Detector Evidence Chart via Chart.js -->
+        <div class="soc-chart-panel">
+          <div class="soc-panel-header">
+            <div>
+              <div class="soc-panel-title">
+                <span>⚡</span>
+                <span id="chartTitle">DETECTOR EVIDENCE VISUALIZATION</span>
+              </div>
+              <div class="soc-panel-subtitle" id="chartSubtitle">Streaming Telemetry Evidence</div>
+            </div>
+          </div>
+
+          <div class="soc-canvas-wrap">
+            <canvas id="evidenceChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Right: Forensic Key-Value Features List -->
+        <div class="soc-chart-panel">
+          <div class="soc-panel-header">
+            <div>
+              <div class="soc-panel-title">
+                <span>📋</span>
+                <span>EXTRACTED FORENSIC ATTRIBUTES</span>
+              </div>
+              <div class="soc-panel-subtitle">Metadata Vector Passed to Meta-Scorer</div>
+            </div>
+          </div>
+
+          <div class="soc-kv-list" id="evidenceKvList">
+            <!-- Populated dynamically by soc-investigation.js -->
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Blast Radius View (PRD 2.2 - Conditionally rendered for C2 & Exfil) -->
+      <div class="soc-blast-container" id="blastRadiusSection">
+        <div class="soc-panel-header">
+          <div>
+            <div class="soc-panel-title">
+              <span>🌐</span>
+              <span>2D BLAST RADIUS TOPOLOGY GRAPH</span>
+            </div>
+            <div class="soc-panel-subtitle">
+              Internal &amp; External Peer Communications within 24h Window (Nodes with red borders indicate concurrent active alerts)
+            </div>
+          </div>
+          <span style="font-family: var(--font-mono); font-size: 10px; color: var(--soc-text-dim);">D3 FORCE DIRECTED</span>
+        </div>
+
+        <svg id="blastSvg" class="soc-blast-svg"></svg>
+      </div>
+
+      <!-- Secondary Forensic Row: Why Not X & Linked Related Alerts -->
+      <div class="grid-2" style="margin-bottom: 24px;">
+        
+        <!-- "Why Not X" Panel (PRD 2.2) -->
+        <div class="soc-chart-panel">
+          <div class="soc-panel-header">
+            <div>
+              <div class="soc-panel-title">
+                <span>🔍</span>
+                <span>"WHY NOT X" META-SCORER REASONING</span>
+              </div>
+              <div class="soc-panel-subtitle">Ruled-Out Hypotheses and Forensic Justification</div>
+            </div>
+          </div>
+
+          <div class="soc-why-not-list" id="whyNotList">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <!-- Related / Correlated Alerts (PRD 2.2) -->
+        <div class="soc-chart-panel">
+          <div class="soc-panel-header">
+            <div>
+              <div class="soc-panel-title">
+                <span>🔗</span>
+                <span>CORRELATED INCIDENTS (±24H WINDOW)</span>
+              </div>
+              <div class="soc-panel-subtitle">Shared Source, Destination IP, or Protocol Fingerprint</div>
+            </div>
+          </div>
+
+          <div class="soc-related-list" id="relatedAlertsList">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Raw Standardized Alert Schema Toggle (PRD 2.2) -->
+      <details class="soc-json-toggle">
+        <summary>
+          <span>{ }</span>
+          <span>VIEW RAW STANDARDIZED ALERT JSON SCHEMA (KAFKA EVENT PAYLOAD)</span>
+          <span style="margin-left: auto; font-size: 10px; color: var(--soc-text-dim);">CLICK TO EXPAND</span>
+        </summary>
+        <pre class="soc-json-body" id="rawJsonContent">// Loading raw payload...</pre>
+      </details>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 PALADIN AI // NTRO CYBER THREAT MONITORING SYSTEM. ALL RIGHTS RESERVED.</div>
+        <div class="footer-legal-links">
+          <span style="color: var(--border-color-4);">Unidirectional Streaming Architecture</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts (Preloader excluded per user requirement) -->
+  <script src="src/js/main.js"></script>
+  <script src="src/js/soc-investigation.js"></script>
+</body>
+</html>

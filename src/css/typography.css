@@ -1,0 +1,130 @@
+/* ============================================================
+   TYPOGRAPHY — BotBlox System
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Typography Scale */
+.text-xs {
+  font-size: var(--text-xs);
+  line-height: var(--lh-tight);
+}
+
+.text-sm {
+  font-size: var(--text-sm);
+  line-height: var(--lh-snug);
+}
+
+.text-base {
+  font-size: var(--text-base);
+  line-height: var(--lh-base);
+}
+
+.text-md {
+  font-size: var(--text-md);
+  line-height: var(--lh-relaxed);
+}
+
+.text-lg {
+  font-size: var(--text-lg);
+  line-height: var(--lh-heading);
+  letter-spacing: -0.02em;
+}
+
+.text-xl {
+  font-size: var(--text-xl);
+  line-height: var(--lh-display);
+  letter-spacing: -0.025em;
+}
+
+.text-hero {
+  font-size: var(--text-hero);
+  line-height: var(--lh-hero);
+  letter-spacing: -0.03em;
+}
+
+/* Weights */
+.weight-regular { font-weight: var(--weight-regular); }
+.weight-medium { font-weight: var(--weight-medium); }
+.weight-semibold { font-weight: var(--weight-semibold); }
+.weight-bold { font-weight: var(--weight-bold); }
+
+/* Colors */
+.text-white { color: var(--color-17); }
+.text-light { color: var(--color-15); }
+.text-subtle { color: var(--color-13); }
+.text-muted { color: var(--border-color-7); }
+.text-dim { color: var(--border-color-4); }
+.text-accent { color: var(--color-7); }
+.text-black { color: var(--color-1); }
+
+/* Monospace Badges & Labels */
+.badge-mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Subheadings with subtle highlight style seen on live site */
+.highlight-text {
+  color: var(--color-17);
+}
+
+.highlight-text span.dim {
+  color: #555e68;
+}
+
+/* Eyebrow Label with Technical Crosshair / Corner styling */
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px 14px;
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color-4);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-16);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.tech-badge::before,
+.tech-badge::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-color: var(--border-color-8);
+  border-style: solid;
+}
+
+.tech-badge::before {
+  top: -1px;
+  left: -1px;
+  border-width: 1px 0 0 1px;
+}
+
+.tech-badge::after {
+  bottom: -1px;
+  right: -1px;
+  border-width: 0 1px 1px 0;
+}
+
