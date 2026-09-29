@@ -7,7 +7,7 @@
   'use strict';
 
   // --- Historical Database of 30+ Alert Incidents ---
-  const HISTORICAL_ALERTS = [
+  let HISTORICAL_ALERTS = [
     {
       id: "ALT-2026-9041",
       timestamp: "2026-09-28T02:14:15.000Z",
@@ -420,6 +420,9 @@
 
   // Export current filtered results as CSV
   function exportCsv() {
+    const apiBase = window.location.origin.startsWith('http') ? '' : 'http://localhost:3001';
+    window.location.href = apiBase + '/api/history/export';
+    return;
     const data = getFilteredData();
     const headers = ["Alert_ID", "Timestamp", "Flow_ID", "Threat_Class", "Severity", "Confidence", "Source_IP", "Dest_IP", "Protocol", "Analyst_Label", "Summary"];
     const rows = data.map(a => [
@@ -461,6 +464,21 @@
   // Initialize History Event Handlers
   document.addEventListener('DOMContentLoaded', () => {
     renderTable();
+
+    async function syncHistoryWithServer() {
+      const apiBase = window.location.origin.startsWith('http') ? '' : 'http://localhost:3001';
+      try {
+        const res = await fetch(apiBase + '/api/alerts');
+        if (res.ok) {
+          const data = await res.json();
+          if (Array.isArray(data.alerts) && data.alerts.length > 0) {
+            HISTORICAL_ALERTS = data.alerts;
+            renderTable();
+          }
+        }
+      } catch(e) {}
+    }
+    syncHistoryWithServer();
 
     // Search Input
     const searchInput = document.getElementById('histSearchInput');

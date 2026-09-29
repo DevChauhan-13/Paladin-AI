@@ -238,7 +238,7 @@
     searchQuery: '',
     threatClass: 'all',
     severity: 'all',
-    alertState: 'all',
+    alertState: 'active',   // Default: only show active alerts
     sortBy: 'priority', // 'priority' | 'chronological'
     timeWindow: '24h',
     isPaused: false
@@ -482,7 +482,25 @@
     alert.analyst_label = 'confirmed';
     alert.state = 'confirmed';
     persistAlerts();
-    renderFeed(true);
+
+    // Animate card out, then re-render (removes it from active feed)
+    var _card = document.querySelector(`.soc-alert-card[data-alert-id="${alertId}"]`);
+    if (_card) {
+      _card.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+      _card.style.opacity = '0';
+      _card.style.transform = 'translateX(18px)';
+      setTimeout(function() { renderFeed(true); updateStatsStrip(); }, 380);
+    } else {
+      renderFeed(true);
+    }
+    updateStatsStrip();
+
+    const apiBase = window.location.origin.startsWith('http') ? '' : 'http://localhost:3001';
+    fetch(apiBase + '/api/alerts/' + encodeURIComponent(alertId) + '/confirm', {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ note: alert.analyst_note || '' })
+    }).catch(function() {});
   }
 
   // Analyst Action: Mark False Positive
@@ -493,7 +511,25 @@
     alert.analyst_label = 'false_positive';
     alert.state = 'false_positive';
     persistAlerts();
-    renderFeed(true);
+
+    // Animate card out, then re-render (removes it from active feed)
+    var _cardFp = document.querySelector(`.soc-alert-card[data-alert-id="${alertId}"]`);
+    if (_cardFp) {
+      _cardFp.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+      _cardFp.style.opacity = '0';
+      _cardFp.style.transform = 'translateX(18px)';
+      setTimeout(function() { renderFeed(true); updateStatsStrip(); }, 380);
+    } else {
+      renderFeed(true);
+    }
+    updateStatsStrip();
+
+    const apiBase = window.location.origin.startsWith('http') ? '' : 'http://localhost:3001';
+    fetch(apiBase + '/api/alerts/' + encodeURIComponent(alertId) + '/fp', {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ note: alert.analyst_note || '' })
+    }).catch(function() {});
   }
 
   // Analyst Action: Save Note
@@ -506,6 +542,13 @@
       alert.analyst_note = input.value.trim();
       persistAlerts();
       renderFeed(true);
+
+      const apiBase = window.location.origin.startsWith('http') ? '' : 'http://localhost:3001';
+      fetch(apiBase + '/api/alerts/' + encodeURIComponent(alertId) + '/note', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ note: alert.analyst_note })
+      }).catch(function() {});
     }
   }
 
@@ -778,8 +821,65 @@
       });
     }
 
-    // 8. Start Simulated WebSocket Stream (every 14 seconds)
-    setInterval(simulateIncomingAlert, 14000);
+    // 8. Real-time Backend API & WebSocket Stream
+    async function fetchAlertsFromBackend() {
+      try {
+        const apiBase = window.location.origin.startsWith('http') ? '' : 'http://localhost:3001';
+        const res = await fetch(apiBase + '/api/alerts');
+        if (res.ok) {
+          const data = await res.json();
+          if (Array.isArray(data.alerts) && data.alerts.length > 0) {
+            alerts = data.alerts;
+            renderFeed(false);
+          }
+        }
+      } catch (e) {}
+    }
+    fetchAlertsFromBackend();
+
+    function connectWebSocket() {
+      const isHttps = window.location.protocol === 'https:';
+      const host = window.location.host || 'localhost:3001';
+      const wsUrl = (isHttps ? 'wss://' : 'ws://') + host;
+
+      let socket;
+      try {
+        socket = new WebSocket(wsUrl);
+      } catch (e) {
+        setInterval(simulateIncomingAlert, 14000);
+        return;
+      }
+
+      socket.onmessage = function(event) {
+        if (state.isPaused) return;
+        try {
+          const msg = JSON.parse(event.data);
+          if (msg.type === 'NEW_ALERT' && msg.payload) {
+            const newAlert = msg.payload;
+            newAlert.is_new = true;
+            alerts.unshift(newAlert);
+            if (alerts.length > 100) alerts.pop();
+            renderFeed(true);
+            setTimeout(function() { newAlert.is_new = false; }, 2500);
+          } else if (msg.type === 'ALERT_UPDATED' && msg.payload) {
+            const updated = msg.payload;
+            const idx = alerts.findIndex(function(a) { return a.id === updated.id; });
+            if (idx !== -1) {
+              alerts[idx] = Object.assign({}, alerts[idx], updated);
+              renderFeed(true);
+            }
+          }
+        } catch (err) {}
+      };
+
+      socket.onclose = function() {
+        setTimeout(connectWebSocket, 4000);
+      };
+      socket.onerror = function() {
+        socket.close();
+      };
+    }
+    connectWebSocket();
 
     // 9. Update Relative Times every 30 seconds
     setInterval(() => {

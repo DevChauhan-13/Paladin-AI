@@ -253,14 +253,77 @@
     }, 4500);
   }
 
+  // Connect to Backend WebSocket Health & Telemetry Stream
+  function connectHealthWebSocket() {
+    const isHttps = window.location.protocol === 'https:';
+    const host = window.location.host || 'localhost:3001';
+    const wsUrl = (isHttps ? 'wss://' : 'ws://') + host;
+
+    let socket;
+    try {
+      socket = new WebSocket(wsUrl);
+    } catch(e) {
+      return;
+    }
+
+    socket.onmessage = function(event) {
+      try {
+        const msg = JSON.parse(event.data);
+        if (msg.type === 'HEALTH_UPDATE' && msg.payload) {
+          const payload = msg.payload;
+          if (payload.pipelineLatencyMs) {
+            healthData.pipelineLatencyMs = payload.pipelineLatencyMs;
+            const latencyValEl = document.getElementById('metricLatencyVal');
+            if (latencyValEl) latencyValEl.textContent = payload.pipelineLatencyMs.toFixed(1) + ' ms';
+            if (latencyChartInstance) {
+              const d = latencyChartInstance.data.datasets[0].data;
+              d.shift();
+              d.push(payload.pipelineLatencyMs);
+              latencyChartInstance.update();
+            }
+          }
+          if (payload.throughputMbps) {
+            healthData.throughputMbps = payload.throughputMbps;
+            const tValEl = document.getElementById('metricThroughputVal');
+            if (tValEl) tValEl.textContent = (payload.throughputMbps / 1000).toFixed(2) + ' Gbps';
+          }
+          if (Array.isArray(payload.sensors)) {
+            healthData.sensors = payload.sensors;
+            renderSensors();
+          }
+        }
+      } catch(e) {}
+    };
+
+    socket.onclose = function() {
+      setTimeout(connectHealthWebSocket, 4000);
+    };
+  }
+
   // Initialize
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', async () => {
     initLatencyChart();
     initThroughputChart();
     initFpTrendChart();
     renderSensors();
     renderDetectors();
     startLiveSimulation();
+    connectHealthWebSocket();
+
+    // Fetch initial metrics from server
+    try {
+      const apiBase = window.location.origin.startsWith('http') ? '' : 'http://localhost:3001';
+      const res = await fetch(apiBase + '/api/health/metrics');
+      if (res.ok) {
+        const data = await res.json();
+        if (data.metrics) {
+          if (data.metrics.pipelineLatencyMs) healthData.pipelineLatencyMs = data.metrics.pipelineLatencyMs;
+          if (data.metrics.throughputMbps) healthData.throughputMbps = data.metrics.throughputMbps;
+          if (Array.isArray(data.metrics.sensors)) healthData.sensors = data.metrics.sensors;
+          renderSensors();
+        }
+      }
+    } catch(e) {}
   });
 
 })();

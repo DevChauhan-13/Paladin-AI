@@ -775,11 +775,20 @@
     const noteInput = document.getElementById('invNoteInput');
     const saveNoteBtn = document.getElementById('invSaveNoteBtn');
 
+    const apiBase = window.location.origin.startsWith('http') ? '' : 'http://localhost:3001';
+
     if (confirmBtn) {
       confirmBtn.addEventListener('click', () => {
         alert.analyst_label = 'confirmed';
         alert.state = 'confirmed';
         renderHeader(alert);
+        fetch(apiBase + '/api/alerts/' + encodeURIComponent(alert.id) + '/confirm', {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ note: alert.analyst_note || '' })
+        }).catch(function() {});
+        // Redirect back to dashboard after a brief moment
+        setTimeout(function() { window.location.href = 'dashboard.html'; }, 1000);
       });
     }
 
@@ -788,6 +797,13 @@
         alert.analyst_label = 'false_positive';
         alert.state = 'false_positive';
         renderHeader(alert);
+        fetch(apiBase + '/api/alerts/' + encodeURIComponent(alert.id) + '/fp', {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ note: alert.analyst_note || '' })
+        }).catch(function() {});
+        // Redirect back to dashboard after a brief moment
+        setTimeout(function() { window.location.href = 'dashboard.html'; }, 1000);
       });
     }
 
@@ -797,13 +813,32 @@
         alert.analyst_note = noteInput.value.trim();
         saveNoteBtn.textContent = 'Saved!';
         setTimeout(() => { saveNoteBtn.textContent = 'Save Note'; }, 2000);
+        fetch(apiBase + '/api/alerts/' + encodeURIComponent(alert.id) + '/note', {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ note: alert.analyst_note })
+        }).catch(function() {});
       });
     }
   }
 
   // --- Initialization ---
-  document.addEventListener('DOMContentLoaded', () => {
-    const activeAlert = getActiveAlert();
+  document.addEventListener('DOMContentLoaded', async () => {
+    let activeAlert = getActiveAlert();
+    const urlParams = new URLSearchParams(window.location.search);
+    const alertId = urlParams.get('alert_id') || 'ALT-2026-9041';
+    const apiBase = window.location.origin.startsWith('http') ? '' : 'http://localhost:3001';
+
+    try {
+      const res = await fetch(apiBase + '/api/alerts/' + encodeURIComponent(alertId));
+      if (res.ok) {
+        const data = await res.json();
+        if (data.alert) {
+          activeAlert = data.alert;
+        }
+      }
+    } catch (e) {}
+
     renderHeader(activeAlert);
     renderKvList(activeAlert);
     renderWhyNot(activeAlert);

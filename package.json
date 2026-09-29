@@ -1,0 +1,27 @@
+{
+  "name": "sih145",
+  "version": "1.0.0",
+  "description": "**AI-Based Cyber Threat Detection System**",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevChauhan-13/Paladin-AI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/DevChauhan-13/Paladin-AI/issues"
+  },
+  "homepage": "https://github.com/DevChauhan-13/Paladin-AI#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "ws": "^8.22.0"
+  }
+}

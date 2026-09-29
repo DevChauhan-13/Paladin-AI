@@ -16,3 +16,14 @@ Desktop.ini
 prd.md
 argus-frontend-prd.md
 
+
+# Node.js dependencies
+node_modules/
+package-lock.json
+
+# Python runtime cache and generated demo output
+__pycache__/
+*.pyc
+*.pyo
+demo-videos/
+
